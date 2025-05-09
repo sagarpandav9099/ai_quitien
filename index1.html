@@ -4,11 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles1.css" />
   </head>
   <body>
-    <!-- Header -->
-    <div class="header">
+    <div class="container header">
       <img src="images/logo.svg" alt="logo" />
       <div class="header-right">
         <p class="info-text">
@@ -18,12 +23,11 @@
         <button class="primary-button">Connect with FAANG Expert</button>
       </div>
     </div>
-
     <!-- Analisys Rersult -->
-    <section class="analisys-result">
+    <div class="container analisys-result">
       <h1 class="title">
-        Analysis Results for <span class="highlight">Firstname</span>
-        <span class="highlight">Lastname</span>
+        Analysis Results for <span class="highlight">[Firstname]</span>
+        <span class="highlight">[Lastname]</span>
       </h1>
       <div class="header-right">
         <button class="outline-button">
@@ -35,31 +39,41 @@
           Copy link to your results
         </button>
       </div>
-    </section>
+    </div>
 
     <!-- Score Section -->
-    <div class="score-wrapper">
-      <!-- Score Card - width: 4 columns -->
+    <div class="container score-wrapper">
       <div class="card score-card">
         <h2>Your <span class="highlight">AI-Readiness</span> Score</h2>
-        <img src="images/score-icon.svg" alt="score-icon" class="score-icon" />
+        <img
+          src="images/score-icon.svg"
+          alt="AI Readiness Score Icon"
+          class="score-icon-img"
+        />
         <p class="description">
           You’re on your way! Your profile shows potential, but there's room to
           grow when it comes to aligning with AI-first roles at top tech
           companies ✨🚀
         </p>
       </div>
-
-      <!-- Skill Gap Card - width: 8 columns -->
       <div class="card skill-gap-card">
         <h2>Your <span class="highlight">skill gaps</span></h2>
-
         <div class="gap-content">
-          <!-- Radar Chart -->
+          <div class="radar-chart-container">
+            <img src="images/score-gap.svg" alt="skill-gap radar chart" />
 
-          <img src="images/score-gap.svg" alt="skill-gap" />
+            <div class="radar-legend">
+              <span>
+                <i class="dot radar-dot-user"></i>
+                Your skill graph
+              </span>
+              <span>
+                <i class="dot radar-dot-required"></i>
+                Skill graph required for your level
+              </span>
+            </div>
+          </div>
 
-          <!-- Skill List -->
           <div class="gap-list">
             <p class="description">
               You’re on your way! Your profile shows potential, but there's room
@@ -68,251 +82,531 @@
             </p>
             <div class="skills-list">
               <div class="skill-item">
-                <img src="images/data-1.svg" alt="" />Brush up on Data Analysis
+                📊<span> Brush up on Data Analysis</span>
               </div>
               <div class="skill-item">
-                <img src="images/data-2.svg" alt="" />Learn systems engineering
+                ⚙️ <span>Learn systems engineering</span>
               </div>
               <div class="skill-item">
-                <img src="images/data-3.svg" alt="" />Brush up on Data Analysis
+                📉 <span>Brush up on Data Analysis</span>
               </div>
               <div class="skill-item">
-                <img src="images/data-4.svg" alt="" />Brush up on Data Analysis
+                📚 <span>Brush up on Data Analysis</span>
               </div>
               <div class="skill-item">
-                <img src="images/data-5.svg" alt="" />Brush up on Data Analysis
+                📊 <span>Brush up on Data Analysis</span>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <!-- Roadmap section-->
-    <div class="roadmap-container">
-      <h1 class="title">
-        [Firstname] 's 2-Year
+
+    <!-- Roadmap Section -->
+    <div class="container roadmap">
+      <h1>
+        [Firstname] ’s 2-year
         <span class="highlight">Personalized Career Roadmap</span>
       </h1>
-      <div class="description">
-        To becoming AI-Enabled [role suggested for user
-      </div>
-      <hr />
+      <p class="description">
+        To becoming AI-Enabled [role suggested for user]
+      </p>
+      <hr class="section-divider" />
 
-      <div class="card-group">
-        <div class="trasition-container">
-          <div class="timeline">
-            <div class="timeline-date">April - June, 2025</div>
-            <div class="timeline-role">
-              Current Role:
-              <div class="role">Software Engineer 1</div>
+      <div class="roadmap-timeline-wrapper">
+        <!-- Roadmap Item 1: Prepare -->
+        <div class="roadmap-item">
+          <div class="card timeline-card">
+            <p class="date">April - June, 2025</p>
+            <p class="role-label">Current Role:</p>
+            <p class="role-title">Software Engineer 1</p>
+          </div>
+          <div class="timeline-connector">
+            <div class="timeline-icon">
+              <img src="images/Layer_1.svg" alt="flag icon" />
             </div>
           </div>
-          <!-- Left Panel -->
-          <div class="card-container left-panel">
-            <span class="tag-here">You're Here!</span>
-            <h2 class="card-title">Prepare for your role transition</h2>
-            <p class="card-description">
-              our profile shows potential, but there's room to grow when it
-              comes to aligning with AI-first roles at top tech companies.. our
-              profile shows potential, but there's room to grow when it comes to
-              aligning with AI-first roles at top tech companies.
-            </p>
-            <h3 class="skills-heading">Skills you will need to gain</h3>
-            <div class="skills-container">
-              <span class="skill-tag">Data Analysis</span>
-              <span class="skill-tag">Data Analysis</span>
-              <span class="skill-tag">Data Analysis</span>
-            </div>
-          </div>
-
-          <!-- Middle Panel (containing two stat cards) -->
-          <div class="middle-panel">
-            <div class="stat-card red">
-              <h3>Role Redundancy Risk</h3>
-              <div class="percentage">
-                80% <img src="images/arew-1.svg" alt="arew-1" />
+          <div class="timeline-main-content">
+            <div class="roadmap-top">
+              <div class="card role-transition">
+                <span class="pill info-pill">You're Here!</span>
+                <h2>Prepare for your role transition</h2>
+                <p class="description">
+                  Our profile shows potential, but there's room to grow when it
+                  comes to aligning with AI-first roles at top tech companies.
+                  Our profile shows potential, but there's room to grow when it
+                  comes to aligning with AI-first roles at top tech companies.
+                </p>
+                <p class="skills-label">Skills you will need to gain</p>
+                <div class="skills-pills-container">
+                  <span class="pill skill-pill">Data Analysis</span>
+                  <span class="pill skill-pill">Data Analysis</span>
+                  <span class="pill skill-pill">Data Analysis</span>
+                </div>
               </div>
-              <p>Recruiters seek AI-savvy candidates</p>
-            </div>
-            <div class="stat-card green">
-              <h3>Reduction in layoff risks</h3>
-              <div class="percentage">
-                75% <img src="images/arow-2.svg" alt="arow-2" />
+              <div class="metrics-column">
+                <div class="card metric-card risk-card">
+                  <p class="metric-title">Role Redundancy Risk</p>
+                  <p class="metric-value red">
+                    80% <img src="images/arow-1.svg" alt="Up trend icon" />
+                  </p>
+                  <p class="metric-description red">
+                    Recruiters seek AI-savvy candidates
+                  </p>
+                </div>
+                <div class="card metric-card reduction-card">
+                  <p class="metric-title">Reduction in layoff risks</p>
+                  <p class="metric-value green">
+                    75% <img src="images/arow-2.svg" alt="Up trend icon" />
+                  </p>
+                  <p class="metric-description green">
+                    Layoff risk reduction after upskilling
+                  </p>
+                </div>
               </div>
-              <p>Layoff risk reduction after upskilling</p>
+              <div class="card salary-card">
+                <p class="salary-range">$100k - $200k</p>
+                <div class="salary-breakdown">
+                  <span class="pill salary-pill fixed">30% Fixed</span>
+                  <span class="pill salary-pill variable">40% Variable</span>
+                  <span class="pill salary-pill equity">30% Equity</span>
+                </div>
+                <p class="salary-label">Current Industry Average</p>
+                <p class="salary-description">Salary Range for your role</p>
+                <img
+                  src="images/chart-graphic.svg"
+                  class="chart-graph"
+                  alt="Salary chart graphic"
+                />
+              </div>
+            </div>
+
+            <h3 class="courses-title">
+              IK courses <span class="highlight">recommended for John</span>
+            </h3>
+            <div class="courses-section">
+              <div class="card course-card">
+                <div class="course-image-container">
+                  <img src="images/course.svg" alt="course image" />
+                  <span class="expand-icon">↗</span>
+                </div>
+                <h4>AI-Enabled Back-end Engineering</h4>
+                <p>
+                  A short description of the course to hook the user and
+                  convince them to purchase it
+                </p>
+                <span class="course-pill"
+                  >Learners got avg 66% salary hike</span
+                >
+              </div>
+              <div class="card course-card">
+                <div class="course-image-container">
+                  <img src="images/course.svg" alt="course image" />
+                  <span class="expand-icon">↗</span>
+                </div>
+                <h4>AI-Enabled Back-end Engineering</h4>
+                <p>
+                  A short description of the course to hook the user and
+                  convince them to purchase it
+                </p>
+                <span class="course-pill">Fast filling course!</span>
+              </div>
+              <div class="card course-card">
+                <div class="course-image-container">
+                  <img src="images/course.svg" alt="course image" />
+                  <span class="expand-icon">↗</span>
+                </div>
+                <h4>AI-Enabled Back-end Engineering</h4>
+                <p>
+                  A short description of the course to hook the user and
+                  convince them to purchase it
+                </p>
+                <span class="course-pill">Fast filling course!</span>
+              </div>
+
+              <div class="card more-courses-card">
+                <h4>We've got more</h4>
+                <p>
+                  Check out our array of AI/ML courses tailored to upleveling
+                  your career.
+                </p>
+                <a href="#" class="btn">View all courses</a>
+              </div>
             </div>
           </div>
-
-          <!-- Right Panel -->
-          <div class="card right-panel">
-            <div class="salary-range">$100k - $200k</div>
-            <div class="salary-tags">
-              <span class="salary-tag fixed">30% Fixed</span>
-              <span class="salary-tag variable">40% Variable</span>
-              <span class="salary-tag equity">30% Equity</span>
+        </div>
+        <!-- Roadmap Item 2: Land Role -->
+        <div class="roadmap-item">
+          <div class="card timeline-card">
+            <p class="date">June - Sept, 2025</p>
+            <p class="role-label">Transition to:</p>
+            <p class="role-title">AI - Software Engineer</p>
+          </div>
+          <div class="timeline-connector">
+            <div class="timeline-icon circle"></div>
+          </div>
+          <div class="timeline-main-content">
+            <div class="roadmap-top">
+              <div class="card row-grid role-transition">
+                <h2>Land your dream role</h2>
+                <p class="description">
+                  Our profile shows potential, but there's room to grow when it
+                  comes to aligning with AI-first roles at top tech companies.
+                  Our profile shows potential, but there's room to grow when it
+                  comes to aligning with AI-first roles at top tech companies.
+                </p>
+                <p class="skills-label">
+                  Skills you would have mastered at this stage
+                </p>
+                <div class="skills-pills-container">
+                  <span class="pill skill-pill">Data Analysis</span>
+                  <span class="pill skill-pill">Data Analysis</span>
+                  <span class="pill skill-pill">Data Analysis</span>
+                </div>
+              </div>
+              <div class="card salary-card">
+                <p class="salary-range">$100k - $200k</p>
+                <div class="salary-breakdown">
+                  <span class="pill salary-pill fixed">30% Fixed</span>
+                  <span class="pill salary-pill variable">40% Variable</span>
+                  <span class="pill salary-pill equity">30% Equity</span>
+                </div>
+                <p class="salary-label">Current Industry Average</p>
+                <p class="salary-description">Salary Range for your role</p>
+                <div class="graph-placeholder">
+                  <img
+                    src="images/chart-graphic.svg"
+                    alt="Salary chart graphic"
+                  />
+                </div>
+              </div>
             </div>
-            <p class="salary-description">
-              <strong>Current Industry</strong> Average <br />
-              Salary Range for your role
-            </p>
-            <div class="graph-placeholder">
-              <!-- Placeholder element, styled with CSS -->
+          </div>
+        </div>
+
+        <!-- Roadmap Item 3: Turbocharge -->
+        <div class="roadmap-item last">
+          <div class="card timeline-card green-tint">
+            <p class="date green-tint">Sept - Oct, 2025</p>
+            <p class="role-label" style="color: #00a45f">Uplevel to:</p>
+            <p class="role-title green-title">Senior AI Software Engineer</p>
+          </div>
+          <div class="timeline-connector last">
+            <div class="timeline-icon trophy">
+              <img src="images/Layer_2.svg" alt="trophy icon" />
+            </div>
+          </div>
+          <div class="timeline-main-content">
+            <div class="roadmap-top">
+              <div class="card role-transition">
+                <h2>
+                  <span class="green-tint"> Turbocharge </span>your career
+                </h2>
+                <p class="description">
+                  Our profile shows potential, but there's room to grow when it
+                  comes to aligning with AI-first roles at top tech companies.
+                  Our profile shows potential, but there's room to grow when it
+                  comes to aligning with AI-first roles at top tech companies.
+                </p>
+                <p
+                  class="skills-label"
+                  style="margin-top: 8px; margin-bottom: 8px"
+                >
+                  Skills you would have mastered at this stage
+                </p>
+                <div class="skills-pills-container">
+                  <span class="pill skill-pill green">Data Analysis</span>
+                  <span class="pill skill-pill green"
+                    >FAANG Interview practice</span
+                  >
+                  <span class="pill skill-pill green"
+                    >Data structures and Algorithms</span
+                  >
+                  <span class="pill skill-pill green">Data Analysis</span>
+                  <span class="pill skill-pill green"
+                    >FAANG Interview practice</span
+                  >
+                  <span class="pill skill-pill green"
+                    >Data structures and Algorithms</span
+                  >
+                </div>
+              </div>
+
+              <div class="metrics-column">
+                <div class="card metric-card reduction-card">
+                  <p class="metric-title">AI Readiness</p>
+                  <p class="metric-value">
+                    ~ 90<span class="total">/100</span>
+                  </p>
+                  <p class="metric-description desc">Expected Salary Range</p>
+                </div>
+                <div class="card metric-card reduction-card">
+                  <p class="metric-title">Reduction in layoff risks</p>
+                  <p class="metric-value">$100k - $200k</p>
+                  <p class="metric-description desc">
+                    +21.01% from your current profile
+                  </p>
+                </div>
+              </div>
+
+              <div class="metrics-column">
+                <div class="card metric-card reduction-card">
+                  <p class="metric-title">Increase in Net Worth</p>
+                  <p class="metric-value">$345k</p>
+                  <p class="metric-description desc">
+                    +21.01% from your current trajectory
+                  </p>
+                </div>
+                <div class="card metric-card reduction-card">
+                  <p class="metric-title">Reduction in layoff risks</p>
+                  <p class="metric-value">50%</p>
+                  <p class="metric-description desc">
+                    +21.01% from your current profile
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-
-    <!-- Skill section-->
-    <div class="skill-container">
-      <h1 class="title">
+    <!-- Skill Section -->
+    <div class="container skill-section">
+      <h1>
         [Firstname] ’s earning potential with
         <span class="highlight">AI skills</span>
       </h1>
-      <hr />
-
+      <hr class="section-divider" />
       <div class="main-content">
-        <div class="panel graph-section simple-box">
+        <div class="card graph-section">
+          <span class="panel-subtitle">Projection</span>
           <div class="panel-header">
-            <span class="panel-subtitle">Projection</span>
-            <h2>Net worth with & without AI skills</h2>
-          </div>
-          <div class="graph-legend">
-            <span><i class="dot ai-enhanced"></i> AI-Enhanced</span>
-            <span><i class="dot non-ai"></i> Non-AI</span>
-          </div>
-
-          <div class="chart-area">
-            <svg
-              viewBox="0 0 600 300"
-              preserveAspectRatio="xMidYMid meet"
-              class="line-chart-svg"
-            >
-              <!-- Y Axis Labels -->
-              <text x="10" y="35" class="axis-label">4k</text>
-              <line x1="40" y1="30" x2="600" y2="30" class="axis-line" />
-              <text x="10" y="105" class="axis-label">3k</text>
-              <line x1="40" y1="100" x2="600" y2="100" class="axis-line" />
-              <text x="10" y="175" class="axis-label">2k</text>
-              <line x1="40" y1="170" x2="600" y2="170" class="axis-line" />
-              <text x="10" y="245" class="axis-label">1k</text>
-              <line x1="40" y1="240" x2="600" y2="240" class="axis-line" />
-              <text x="0" y="300" class="axis-label">0</text>
-              <line x1="40" y1="295" x2="600" y2="295" class="axis-line" />
-
-              <!-- Non-AI Line (Grey) -->
-              <path
-                d="M 50 250 Q 200 220, 350 200 T 580 175"
-                class="line non-ai-line"
-              />
-              <!-- AI-Enhanced Line (Blue) -->
-              <path
-                d="M 50 250 Q 200 180, 350 100 T 580 35"
-                class="line ai-line"
-              />
-
-              <!-- X Axis Labels -->
-              <text x="60" y="315" class="axis-label x-axis">2025</text>
-              <text x="160" y="315" class="axis-label x-axis">2026</text>
-              <text x="260" y="315" class="axis-label x-axis">2027</text>
-              <text x="360" y="315" class="axis-label x-axis">2028</text>
-              <text x="460" y="315" class="axis-label x-axis">2029</text>
-              <text x="560" y="315" class="axis-label x-axis">2030</text>
-              <!-- Note: 2031 label might need adjustment based on final line end -->
-              <text x="620" y="315" class="axis-label x-axis">2031</text>
-            </svg>
-            <!-- Data Callouts - Positioned Manually -->
-            <div class="data-callout current-pos">
-              You're here<br />
-              <strong>$80k - $100k</strong>
+            <h2 class="card-subtitle">Net worth with & without AI skills</h2>
+            <div class="graph-legend">
+              <span><i class="dot ai-enhanced"></i> AI-Enhanced</span>
+              <span><i class="dot non-ai"></i> Non-AI</span>
             </div>
-            <div class="data-callout non-ai-future">$200k - $300k</div>
-            <div class="data-callout ai-future">$400k - $450k</div>
+          </div>
+          <div class="chart-area-wrapper">
+            <div class="y-axis-labels">
+              <span>4k</span>
+              <span>3k</span>
+              <span>2k</span>
+              <span>1k</span>
+              <span>0</span>
+            </div>
+            <div class="chart-content">
+              <svg
+                class="plot-area"
+                viewBox="0 0 700 250"
+                preserveAspectRatio="none"
+              >
+                <line class="grid-line" x1="0" y1="0" x2="700" y2="0"></line>
+                <!-- 4k line -->
+                <line
+                  class="grid-line"
+                  x1="0"
+                  y1="62.5"
+                  x2="700"
+                  y2="62.5"
+                ></line>
+                <!-- 3k line -->
+                <line
+                  class="grid-line"
+                  x1="0"
+                  y1="125"
+                  x2="700"
+                  y2="125"
+                ></line>
+                <!-- 2k line -->
+                <line
+                  class="grid-line"
+                  x1="0"
+                  y1="187.5"
+                  x2="700"
+                  y2="187.5"
+                ></line>
+                <!-- 1k line -->
+
+                <line
+                  class="grid-line"
+                  x1="0"
+                  y1="249"
+                  x2="700"
+                  y2="249"
+                ></line>
+
+                <path
+                  class="data-line line-non-ai"
+                  d="M 20 215 Q 350 190, 680 115"
+                ></path>
+
+                <path
+                  class="data-line line-ai-enhanced"
+                  d="M 20 210 Q 350 150, 680 35"
+                ></path>
+              </svg>
+
+              <div class="x-axis-labels">
+                <span>2025</span>
+                <span>2026</span>
+                <span>2027</span>
+                <span>2028</span>
+                <span>2029</span>
+                <span>2030</span>
+                <span>2031</span>
+              </div>
+
+              <!-- Callouts -->
+              <div class="callout callout-start">
+                <span class="callout-subtitle">You're here</span>
+                $80k - $100k
+              </div>
+              <div class="callout callout-non-ai-end">$200k - $300k</div>
+              <div class="callout callout-ai-end">$400k - $450k</div>
+            </div>
           </div>
         </div>
-        <!-- Right Panel: Donut Chart Section -->
-       <!-- Right Panel: Donut Chart Section -->
-<div class="panel market-share-section">
-  <div class="panel-header">
-      <span class="panel-subtitle">[domain]'s Future</span>
-      <h2>AI-enabled Job Market share in 5 years</h2>
-  </div>
-
-  <!-- **** START: REQUIRED WRAPPER **** -->
-  <div class="market-content-wrapper">
-
-      <!-- Left Inner Column (Donut Chart) -->
-      <div class="donut-chart-area">
-          <svg viewBox="0 0 120 120" class="donut-svg">
-              <!-- ... svg donut content ... -->
-              <circle cx="60" cy="60" r="50" class="donut-segment non-ai-segment" />
-              <circle cx="60" cy="60" r="50" class="donut-segment ai-segment" />
-              <text x="25" y="65" class="donut-label non-ai-label">45%</text>
-              <text x="95" y="65" class="donut-label ai-label">55%</text>
-          </svg>
-          <div class="donut-legend">
-              <span><i class="dot ai-enabled"></i> AI-Enabled Jobs</span>
-              <span><i class="dot non-ai-jobs"></i> Non-AI Jobs</span>
+        <div class="panel market-share-section">
+          <div class="panel-header">
+            <span class="panel-subtitle">[domain]'s Future</span>
+            <h2 class="card-subtitle">
+              AI-enabled Job Market share in 5 years
+            </h2>
           </div>
-      </div>
+          <div class="market-content-wrapper">
+            <div class="donut-chart-area">
+              <svg
+                viewBox="0 0 120 120"
+                class="donut-svg"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <defs>
+                  <!-- Define the linear gradient for the AI segment -->
+                  <linearGradient
+                    id="aiGradient"
+                    x1="0%"
+                    y1="0%"
+                    x2="100%"
+                    y2="0%"
+                  >
+                    <stop
+                      offset="0%"
+                      style="stop-color: #0134da; stop-opacity: 1"
+                    />
+                    <stop
+                      offset="100%"
+                      style="stop-color: #61b0f7; stop-opacity: 1"
+                    />
+                  </linearGradient>
+                </defs>
 
-      <!-- Right Inner Column (Text Blocks) -->
-      <!-- **** START: REQUIRED WRAPPER FOR TEXT **** -->
-      <div class="market-text-content">
-          <div class="text-block">
-              <h3>Current trends for your domain</h3>
-              <p>
-                  You're on your way! Your profile shows potential, but there's room
-                  to grow when it comes to aligning with AI-first.
-              </p>
-          </div>
-          <div class="text-block">
-              <h3>Future trends for your domain</h3>
-              <p>
-                  You're on your way! Your profile shows potential, but there's room
-                  to grow when it comes to aligning with AI-first. The following
-                  skills need to be sharpened:
-              </p>
-              <!-- Add list of skills here if needed -->
-          </div>
-      </div>
-       <!-- **** END: REQUIRED WRAPPER FOR TEXT **** -->
-  </div>
-  <!-- **** END: REQUIRED WRAPPER **** -->
-</div>
-      </div>
-  
+                <!-- Non-AI Segment (background or first segment) -->
+                <circle
+                  cx="60"
+                  cy="60"
+                  r="50"
+                  class="donut-segment non-ai-segment"
+                />
 
-      <section class="cta-banner">
-        <div class="cta-content">
-            <div class="cta-text">
-                <h1>Take the First Step—Join the AI Revolution</h1>
-                <p>
-                    Your competition is already moving. AI isn’t the future—it’s today’s baseline. Reserve your
-                    spot now for an exclusive webinar with an AI career expert.
+                <!-- AI Segment (foreground or second segment) -->
+                <circle
+                  cx="60"
+                  cy="60"
+                  r="50"
+                  class="donut-segment ai-segment"
+                />
+
+                <!-- Labels -->
+                <text x="15" y="65" class="donut-label non-ai-label">45%</text>
+                <text x="110" y="65" class="donut-label ai-label">55%</text>
+              </svg>
+              <div class="donut-legend">
+                <span><i class="dot ai-enhanced"></i> AI-Enabled Jobs</span>
+                <span><i class="dot non-ai-jobs"></i> Non-AI Jobs</span>
+              </div>
+            </div>
+            <div class="market-text-content">
+              <div class="text-block">
+                <h3>Current trends for your domain</h3>
+                <p class="description">
+                  You're on your way! Your profile shows potential, but there's
+                  room to grow when it comes to aligning with AI-first.
                 </p>
-                <button class="cta-button">Connect with FAANG Expert</button>
+              </div>
+              <div class="text-block">
+                <h3>Future trends for your domain</h3>
+                <p class="description">
+                  You're on your way! Your profile shows potential, but there's
+                  room to grow when it comes to aligning with AI-first. The
+                  following skills need to be sharpened:
+                </p>
+              </div>
             </div>
-            <div class="cta-image-area">
-                <div class="image-showcase">
-                    <!-- Faint background shape -->
-                    <span class="background-shape">R</span>
-                    <!-- Main person image -->
-                    <img src="images/person-placeholder.svg" alt="AI Career Expert" class="person-image">
-                    <!-- Logos on the side -->
-                    <div class="logos">
-                        <img src="images/facebook-logo.svg" alt="Facebook Logo" class="logo">
-                        <img src="images/amazon-logo.svg" alt="Amazon Logo" class="logo">
-                        <img src="images/apple-logo.svg" alt="Apple Logo" class="logo">
-                        <img src="images/netflix-logo.svg" alt="Netflix Logo" class="logo">
-                        <img src="images/google-logo.svg" alt="Google Logo" class="logo">
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+
+    <!-- CTA Banner -->
+    <div class="cta-banner-wrapper">
+      <div class="cta-banner">
+        <div class="cta-content">
+          <div class="cta-text">
+            <h1>Take the First Step—Join the AI Revolution</h1>
+            <p>
+              Your competition is already moving. AI isn’t the future—it’s
+              today’s baseline. Reserve your spot now for an exclusive webinar
+              with an AI career expert.
+            </p>
+            <button class="cta-button">Connect with FAANG Expert</button>
+          </div>
+          <div class="cta-image-area">
+            <div class="image-showcase">
+              <span class="background-shape first">{</span>
+              <span class="background-shape last">}</span>
+              <img
+                src="images/person-placeholder.svg"
+                alt="AI Career Expert"
+                class="person-image"
+              />
+              <div class="logos">
+                <img
+                  src="images/facebook-logo.svg"
+                  alt="Facebook Logo"
+                  class="logo-icon"
+                />
+                <img
+                  src="images/amazon-logo.svg"
+                  alt="Amazon Logo"
+                  class="logo-icon"
+                />
+                <img
+                  src="images/apple-logo.svg"
+                  alt="Apple Logo"
+                  class="logo-icon"
+                />
+                <img
+                  src="images/netflix-logo.svg"
+                  alt="Netflix Logo"
+                  class="logo-icon"
+                />
+                <img
+                  src="images/google-logo.svg"
+                  alt="Google Logo"
+                  class="logo-icon"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <img src="images/logo.svg" alt="Company Logo" />
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>
-
-
- 
