@@ -14,7 +14,7 @@
   </head>
   <body>
     <div class="container header">
-      <img src="images/logo.svg" alt="logo" />
+      <img src="images/logo.svg" alt="logo" class="header-logo" />
       <div class="header-right">
         <p class="info-text">
           Learn in-demand AI/ML skills and stay ahead in today’s changing tech
@@ -273,12 +273,12 @@
                 </div>
                 <p class="salary-label">Current Industry Average</p>
                 <p class="salary-description">Salary Range for your role</p>
-                <div class="graph-placeholder">
-                  <img
-                    src="images/chart-graphic.svg"
-                    alt="Salary chart graphic"
-                  />
-                </div>
+
+                <img
+                  src="images/chart-graphic.svg"
+                  alt="Salary chart graphic"
+                  class="chart-graph"
+                />
               </div>
             </div>
           </div>
@@ -310,7 +310,7 @@
                 </p>
                 <p
                   class="skills-label"
-                  style="margin-top: 8px; margin-bottom: 8px"
+                  style="margin-top: 13px; margin-bottom: 13px"
                 >
                   Skills you would have mastered at this stage
                 </p>
@@ -480,6 +480,7 @@
                 viewBox="0 0 120 120"
                 class="donut-svg"
                 xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
               >
                 <defs>
                   <!-- Define the linear gradient for the AI segment -->
@@ -516,7 +517,19 @@
                   r="50"
                   class="donut-segment ai-segment"
                 />
-
+                <!-- Image in the Center -->
+                <image
+                  xlink:href="images/agentup.svg"
+                  href="images/agentup.svg"
+                  x="45"
+                  y="45"
+                  width="30"
+                  height="30"
+                  transform="rotate(90 60 60)"
+                >
+                  <title>Agent Up Icon</title>
+                  <!-- Accessibility -->
+                </image>
                 <!-- Labels -->
                 <text x="15" y="65" class="donut-label non-ai-label">45%</text>
                 <text x="110" y="65" class="donut-label ai-label">55%</text>
