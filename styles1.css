@@ -5,22 +5,20 @@
 }
 
 html {
-  font-size: 16px; /* Base font size for rem units */
+  font-size: 16px;
 }
 
 body {
   font-family: "Segoe UI", sans-serif;
   background: #ffffff;
-  overflow-x: hidden; /* Prevent horizontal scroll */
-  color: #15233b; /* Default text color */
+  color: #15233b;
 }
 
 .container {
-  width: 100%;
   max-width: 1920px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0 clamp(1.5rem, 7.5vw, 11.25rem);
+  padding-left: 180px;
+  padding-right: 180px;
+  overflow-x: hidden;
 }
 
 /* Header */
@@ -33,32 +31,38 @@ body {
   padding-bottom: 1.5rem;
   gap: 1rem;
 }
+
 .header-logo {
-  width: clamp(5.8125rem, 8vw, 10.8125rem);
-  height: auto;
+  height: clamp(1.5rem, 2.34375vw, 2.8125rem);
+  width: clamp(5.8125rem, 9.01vw, 10.8125rem);
   display: block;
   flex-shrink: 0;
 }
+
 .header-right {
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
   gap: 1rem;
 }
+
 .header-right .info-text {
-  max-width: 70ch;
   font-size: 0.875rem;
   color: #546279;
+  font-weight: 500;
+  font-family: Lato;
 }
 
 .primary-button {
+  /* Your existing styles - these look fine */
   background: linear-gradient(to right, #0082f8, #61b0f7);
   color: white;
-  padding: 0.875em 1.25em;
+  padding: 0.875rem 1.75rem;
   border: none;
   border-radius: 0.5rem;
   font-size: 0.875rem;
   font-weight: bold;
+  font-family: "open sens";
   cursor: pointer;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: opacity 0.3s ease;
@@ -76,13 +80,12 @@ body {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  margin-top: 1.5rem;
-  gap: 1rem;
+  margin-top: 2rem;
 }
 
 .title {
   color: #15233b;
-  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-size: 32px;
   font-weight: bold;
 }
 
@@ -99,17 +102,18 @@ body {
   background-color: transparent;
   color: #0082f8;
   border: 2px solid #0082f8;
-  padding: 0.5em 1.4375em;
+  padding: 0.5rem 1.5rem;
   border-radius: 0.5rem;
   font-size: 0.875rem;
   font-weight: 600;
+  font-family: "Open Sans";
   cursor: pointer;
   transition: all 0.3s ease;
   white-space: nowrap;
 }
 .outline-button img {
-  width: 1em;
-  height: 1em;
+  width: 1rem;
+  height: 1rem;
 }
 
 .outline-button:hover {
@@ -123,7 +127,7 @@ body {
 /* Score Section */
 .card {
   background: #fff;
-  border: 1px solid #e0e0e0;
+  border: 1px solid #e3e3e3;
   border-radius: 0.5rem;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
 }
@@ -137,26 +141,42 @@ body {
 }
 
 .score-card {
-  flex: 1 1 424px;
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: 26.5rem;
+  padding: 2rem;
+  border: none;
+  outline: 1px solid #e3e3e3;
   display: flex;
+  gap: 1rem;
   flex-direction: column;
-  padding: clamp(1.5rem, 3vw, 2rem);
+  min-width: 21.4375rem;
+  max-width: 26.5rem;
 }
 
 .skill-gap-card {
-  flex: 1 1 1100px;
-  padding: clamp(1.5rem, 3vw, 2rem);
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: 68.8125rem;
+  border: none;
+  outline: 1px solid #e3e3e3;
+  padding: 2rem;
+  min-width: 30rem;
+  max-width: 68.8125rem;
 }
 .skill-gap-card h2,
 .score-card h2 {
   font-size: clamp(1.125rem, 2vw, 1.375rem);
-  margin-bottom: 1rem;
+  font-weight: bold;
+  font-family: "open sans";
   width: 100%;
 }
 
 .description {
   font-size: 1rem;
   color: #546279;
+  font-family: Lato;
+  line-height: 140%;
 }
 
 .gap-content {
@@ -176,14 +196,13 @@ body {
 .radar-chart-container img {
   max-width: 100%;
   height: auto;
-  max-height: 300px;
 }
 
 .radar-legend {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
+  gap: 0.9375rem;
   margin-top: 1.3125rem;
   font-size: 0.75rem;
   color: #546279;
@@ -194,6 +213,8 @@ body {
   display: flex;
   align-items: center;
   gap: 0.375rem;
+  font-size: 0.625rem;
+  font-family: "open sans";
 }
 
 .dot {
@@ -218,15 +239,17 @@ body {
 }
 
 .skills-list {
-  margin-top: 0.75rem;
+  margin-top: 1rem;
 }
 
 .skill-item {
   background: #edf6ff;
   color: #0785f8;
-  padding: 0.5em 0.75em;
-  border-radius: 0.375rem;
+  padding: 0.375rem 0.75rem;
+  border-radius: 0.25rem;
   font-size: 0.8125rem;
+  font-family: "Lato";
+  line-height: 148%;
   margin-bottom: 0.75rem;
 }
 .skill-item span {
@@ -241,16 +264,20 @@ body {
 
 .roadmap > h1 {
   color: #15233b;
-  font-size: clamp(1.25rem, 2.2vw, 1.75rem);
+  font-size: clamp(1.25rem, 2.2vw, 1.5rem);
   font-weight: bold;
+  font-family: "open sans";
   padding-bottom: 0.1875rem;
 }
-
+.pera {
+  padding-top: 0.75rem;
+}
 .section-divider {
   border: none;
   height: 1px;
   background-color: #e0e4e8;
-  margin: 2rem 0;
+  margin-top: 1.5rem;
+  margin-bottom: 4rem;
 }
 .roadmap-timeline-wrapper {
   position: relative;
@@ -260,14 +287,16 @@ body {
   display: flex;
   align-items: flex-start;
   flex-wrap: nowrap;
-  gap: clamp(1rem, 2vw, 1.5625rem);
-  margin-bottom: 2.5rem;
+  gap: clamp(1rem, 2vw, 1.5rem);
+  margin-bottom: 5rem;
   position: relative;
 }
 .timeline-card {
   flex: 0 0 clamp(10rem, 15vw, 14.3125rem);
   display: flex;
-  padding: 1rem 0.75rem;
+  padding: 0.75rem 1rem;
+  line-height: 148%;
+  font-family: "Lato";
   flex-direction: column;
   justify-content: center;
   background: linear-gradient(to right, #e9f5ff 100%, #93ccff 70%);
@@ -279,8 +308,10 @@ body {
 .timeline-card .date {
   color: #0082f8;
   font-weight: bold;
+  font-family: "Lato";
   margin-bottom: 0.25rem;
   font-size: clamp(1rem, 1.8vw, 1.25rem);
+  line-height: 148%;
 }
 .date.green-tint {
   color: #027a48;
@@ -289,12 +320,13 @@ body {
 .role-label {
   font-size: clamp(0.875rem, 1.2vw, 1rem);
   font-weight: bold;
-  margin-bottom: 0.125rem;
+  font-family: "Lato";
   color: #546279;
 }
 
 .role-title {
   font-weight: bold;
+  font-family: "Lato";
   font-size: clamp(0.875rem, 1.2vw, 1rem);
   color: #15233b;
 }
@@ -315,6 +347,7 @@ body {
   height: 2.6875rem;
   border-radius: 50%;
   flex-shrink: 0;
+  outline: 4px solid #e9f5ff;
   position: relative;
   z-index: 2;
   display: flex;
@@ -349,54 +382,69 @@ body {
   flex-wrap: wrap;
 }
 .role-transition {
-  flex: 2 1 clamp(42rem, 30vw, 25rem);
+  flex: 1 1 clamp(17.5rem, 36vw, 42.5rem);
   min-width: 280px;
   padding: 1.25rem;
+  max-width: 42.5rem;
+}
+.metrics-column {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9375rem;
+  flex: 1 1 clamp(12rem, 15vw, 16.5rem);
+  max-width: 16.5rem;
+}
+.salary-card {
+  flex: 1 1 clamp(14rem, 15vw, 15.625rem);
+  max-width: 16.5rem;
+  padding-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  background: #f7fdff;
 }
 .info-pill {
   background: linear-gradient(to right, #e9f5ff 100%, #93ccff 70%);
   color: #0082f8;
   font-size: 0.75rem;
   font-weight: 500;
+  font-family: "Lato";
+  padding: 0.375rem 0.75rem;
+  border-radius: 37px;
+}
+.role-transition h2 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.25rem;
+  font-weight: bold;
+  font-size: clamp(1.1rem, 1.8vw, 1.25rem);
+  font-family: "open sans";
+}
+.skills-label {
+  font-weight: 500;
+  font-size: 0.875rem;
+  font-family: "Open Sans";
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
 }
 .skills-pills-container {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
-  padding-top: 0.75rem;
+  padding-top: 0.67rem;
 }
-.skills-label {
-  font-weight: 500;
-  font-size: 0.875rem;
-  margin-top: 0.75rem;
-  margin-bottom: 0.75rem;
-}
+
 .skill-pill {
   background-color: #e9f5ff;
   color: #0082f8;
   font-size: 0.875rem;
   font-weight: 500;
-  border-radius: 0.875rem;
-  padding: 0.375rem 0.5em;
+  border-radius: 0.5rem;
+  padding: 0.375rem 0.875rem;
 }
-.pill {
-  display: inline-block;
-  padding: 0.25em 0.75em;
-  border-radius: 0.75rem;
-  font-size: 0.8rem;
-  font-weight: 400;
-  border: 1px solid transparent;
-}
-.metrics-column {
-  display: flex;
-  flex-direction: column;
-  gap: 0.9375rem;
-  flex: 1 1 clamp(12rem, 20vw, 16.5rem);
-}
+
 .metric-card {
   display: flex;
   flex-direction: column;
-  padding: 1.3125rem 0.875rem;
+  padding: 1.3125rem;
 }
 .risk-card {
   background-color: #fffafa;
@@ -406,7 +454,7 @@ body {
   font-size: 0.8125rem;
   font-weight: 500;
   color: #555555;
-  font-family: "Open Sans", Arial, sans-serif;
+  font-family: "Open Sans";
 }
 .metric-value {
   font-size: clamp(1.5rem, 2.5vw, 2rem);
@@ -414,12 +462,11 @@ body {
   display: flex;
   align-items: center;
   margin-bottom: 0.25rem;
-  font-family: initial;
+  font-family: Inter;
+  line-height: 37.9px;
 }
 .metric-value img {
   margin-left: 0.3125rem;
-  width: 1em;
-  height: 1em;
 }
 
 .metric-value.red {
@@ -436,28 +483,21 @@ body {
   background-color: #f4fffa;
 }
 .metric-value.green {
-  color: #28a745;
+  color: #1e1b39;
 }
 
 .metric-description.green {
   color: #28a745;
 }
 .metric-description.desc {
-  color: #28a745;
-  padding-top: 0.1875rem;
-  padding-bottom: 0.125rem;
+  color: #027a48;
+  padding-top: 0.375rem;
 }
-.salary-card {
-  flex: 1 1 clamp(14rem, 22vw, 15.625rem);
-  padding-top: 1.75rem;
-  display: flex;
-  flex-direction: column;
-  background: #f7fdff;
-}
+
 .salary-range {
-  font-size: clamp(1.25em, 2vw, 1.5em);
+  font-size: clamp(1.25em, 2vw, 1.254375rem);
   font-weight: 700;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
   text-align: center;
 }
 .salary-breakdown {
@@ -469,31 +509,49 @@ body {
   padding-left: clamp(1.5rem, 3vw, 2rem);
   margin-bottom: 0.75rem;
 }
+
 .salary-pill.fixed {
   background-color: #e7fdee;
   color: #0f5132;
+  font-size: 0.75rem;
+  font-weight: 500;
+  font-family: Inter;
+  padding: 0.25rem 0.5rem;
+  border-radius: 38px;
   border-color: #c3e6cb;
 }
 .salary-pill.variable {
   background-color: #fff8e1;
   color: #664d03;
   border-color: #ffecb3;
+  font-size: 0.75rem;
+  font-weight: 500;
+  font-family: Inter;
+  padding: 0.25rem 0.5rem;
+  border-radius: 38px;
 }
 .salary-pill.equity {
   background-color: #e7f5ff;
   color: #0c54a8;
   border-color: #d0ebff;
+  font-size: 0.75rem;
+  font-weight: 500;
+  font-family: Inter;
+  padding: 0.25rem 0.5rem;
+  border-radius: 38px;
 }
 .salary-label {
   font-weight: bold;
-  font-size: 0.9em;
+  font-size: 0.875rem;
   text-align: center;
+  color: #344157;
+  font-family: "open sans";
 }
 .salary-description {
-  font-size: 0.9em;
-  color: #666;
+  font-size: 0.875rem;
+  color: #344157;
   text-align: center;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1.1875rem;
 }
 .chart-graph {
   margin-top: -16px;
@@ -504,18 +562,18 @@ body {
   margin-top: 1.5rem;
   margin-bottom: 1rem;
   font-weight: bold;
-  font-size: clamp(1.1rem, 1.8vw, 1.375rem);
+  font-size: clamp(1.1rem, 1.8vw, 1rem);
 }
 
 .courses-section {
   display: flex;
-  gap: 1.25rem;
+  gap: 1rem;
   flex-wrap: wrap;
-  margin-bottom: 3.125rem;
 }
 .course-card {
-  flex: 1 1 clamp(16rem, 25vw, 18.75rem);
+  flex: 1 1 clamp(16rem, 25vw, 19.25rem);
   min-width: 280px;
+  max-width: 19.25rem;
   padding: 1rem 1rem 1.5rem 1rem;
   display: flex;
   flex-direction: column;
@@ -524,42 +582,44 @@ body {
   margin-bottom: 0.25rem;
   font-size: 0.875rem;
   font-weight: 600;
+  font-family: "open sans";
   color: #15233b;
 }
 .course-card p {
   flex-grow: 1;
   margin-bottom: 1rem;
   font-size: 0.875rem;
+  font-family: "Lato";
   color: #546279;
 }
 
 .course-pill {
   background: #fffde0;
   color: #baa700;
-  padding: 0.375em 0.75em;
-  border-radius: 1rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 0.5rem;
   text-align: center;
-  font-size: 0.75rem;
+  font-size: 0.82rem;
   font-weight: 500;
+  font-family: Inter;
   max-width: fit-content;
   align-self: center;
   margin-bottom: -33px;
   position: relative;
 }
-
+.row-grid.roadmap-top {
+  gap: 0.9375rem;
+}
 .row-grid.role-transition {
-  flex: 1 1 62.065rem;
-  padding-top: 2.8125rem;
-  padding-bottom: 2.8125rem;
+  flex: 2 1 clamp(14rem, 80vw, 60.0625rem);
+  min-width: 14rem;
+  max-width: 60.0625rem;
+  padding-top: 1.9375rem;
+  padding-bottom: 2.4375rem;
 }
-
-.role-transition h2 {
-  margin-top: 0.5rem;
-  margin-bottom: 0.3125rem;
-  font-weight: bold;
-  font-size: clamp(1.1rem, 1.8vw, 1.25rem);
+.row-grid.chart-graph {
+  margin-top: -30px;
 }
-
 .course-image-container {
   position: relative;
   margin-bottom: 1rem;
@@ -596,25 +656,31 @@ body {
   padding: 1.25rem;
 }
 .more-courses-card h4 {
-  margin-bottom: 0.5rem;
-  font-size: 1.1em;
+  margin-bottom: 0.375rem;
+  font-size: 0.875rem;
+  color: #ffffff;
+  font-weight: bold;
+  font-family: "open sans";
 }
 .more-courses-card p {
   margin-bottom: 1rem;
-  font-size: 0.9em;
-  line-height: 1.5;
+  font-size: 0.875rem;
+  font-family: open sans;
+  color: #ffffff;
 }
 
 .btn {
   width: 100%;
-  max-width: 200px;
+  max-width: 225px;
   display: inline-block;
   background-color: #ffffff;
   color: #007bff;
   padding: 0.6875em 1.3125em;
   border-radius: 0.375rem;
   text-decoration: none;
-  font-weight: 600;
+  font-size: 0.69rem;
+  font-weight: bold;
+  font-family: open sans;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 .btn:hover {
@@ -635,8 +701,14 @@ body {
 .roadmap-item .timeline-connector.last::after {
   display: none;
 }
-.green-tint {
-  color: #00a45f !important;
+.roadmap-top.last {
+  gap: 0.875rem;
+}
+.role-transition.last {
+  max-width: 42.6875rem;
+}
+.role-transition.last h2 {
+  margin-top: 0;
 }
 .skill-pill.green {
   background: #ffffff;
@@ -645,13 +717,23 @@ body {
   border: 1px solid #a1eccd;
   font-size: 0.8125rem;
   font-weight: bold;
+  font-family: Lato;
+}
+.metrics-column.last {
+  gap: 0.75rem;
 }
 .total {
   font-size: 0.75rem;
+  font-family: Inter;
+  font-weight: bold;
   padding-top: 0;
   align-self: flex-end;
   margin-left: 0.125rem;
-  color: #546279;
+  color: #1e1b39;
+}
+.metric-value.last {
+  font-size: 1.625rem;
+  line-height: 37.9px;
 }
 
 /*  Skill Section */
@@ -661,27 +743,29 @@ body {
 }
 .skill-section > h1 {
   color: #15233b;
-  font-size: clamp(1.25rem, 2.2vw, 1.75rem);
+  font-size: clamp(1.25rem, 2.2vw, 1.5rem);
   font-weight: bold;
+  font-family: open sans;
 }
 
 .main-content {
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
-  margin-top: 2rem;
 }
 
 .graph-section {
-  flex: 2 1 clamp(25rem, 60%, 50.0625rem);
+  flex: 2 1 clamp(25rem, 46%, 61.75rem);
   min-width: 0;
+  max-width: 61.75rem;
   padding: clamp(1.5rem, 3vw, 2rem);
   background-color: #ffffff;
 }
 
 .market-share-section {
-  flex: 1 1 clamp(18rem, 35%, 25rem);
+  flex: 1 1 clamp(18rem, 35%, 33.25rem);
   min-width: 0;
+  max-width: 33.25rem;
   padding: clamp(1.5rem, 3vw, 2rem);
   background-color: #f7fdff;
 }
@@ -870,7 +954,7 @@ body {
 .market-content-wrapper {
   display: flex;
   flex-wrap: wrap;
-  gap: 1.5rem;
+  gap: 2.5rem;
   flex-grow: 1;
   align-items: flex-start;
 }
@@ -887,8 +971,7 @@ body {
   transform-origin: center center;
   overflow: visible;
   width: 100%;
-
-  height: auto;
+  height: 13rem;
 }
 .donut-segment {
   fill: none;
@@ -951,18 +1034,19 @@ body {
   font-size: 0.875rem;
   font-weight: bold;
   color: #15233b;
-  margin-bottom: 0.375rem;
+  margin-bottom: 0.5rem;
+  font-family: Lato;
+  line-break: 140%;
+}
+.text-block p {
+  font-size: 0.875rem;
+
+  color: #546279;
+  line-break: 140%;
+  font-family: Lato;
 }
 
 /* === CTA BANNER === */
-.cta-banner-wrapper {
-  width: 100%;
-  max-width: 1920px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0 clamp(1.5rem, 7.5vw, 11.25rem);
-  margin-top: 3rem;
-}
 
 .cta-banner {
   background: linear-gradient(to right, #0082f8, #61b0f7);
@@ -986,24 +1070,28 @@ body {
 .cta-text h1 {
   font-size: clamp(1.75rem, 3vw, 2rem);
   font-weight: bold;
+  font-family: open sans;
   line-height: 1.3;
   margin-bottom: 1.5rem;
   color: #fff;
 }
 .cta-text p {
   font-size: clamp(1rem, 1.8vw, 1.25rem);
-  line-height: 1.6;
+  font-family: Lato;
+  line-height: 30px;
   margin-bottom: 1.5rem;
   opacity: 0.95;
+  color: #ffffff;
 }
 .cta-button {
   background-color: #ffffff;
   color: #007bff;
   border: none;
   border-radius: 0.5rem;
-  padding: 0.875em 1em;
-  font-size: 1rem;
-  font-weight: 600;
+  padding: 0.875em 1.75rem;
+  font-size: 1.125rem;
+  font-weight: bold;
+  font-family: open sans;
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.3s ease;
   box-shadow: 0 5px 20px rgba(0, 100, 255, 0.25);
@@ -1026,7 +1114,8 @@ body {
 
   overflow: hidden;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  max-width: 380px;
+  max-width: 22.5625rem;
+  max-height: 14.6875rem;
   width: 100%;
 }
 .person-image {
@@ -1059,15 +1148,16 @@ body {
   top: 50%;
   transform: translateY(-50%);
   right: 1.5rem;
-  background: linear-gradient(to right, #ffffff 100%, #ffffff 0%);
+  background: linear-gradient(to bottom, #eef4fb, #dbeafe);
+  border-top-right-radius: 0.5rem;
+  border-top-left-radius: 0.5rem;
+  padding: 1rem 0.5rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
   z-index: 3;
-  padding: 0.5rem;
-  gap: 0.75rem;
-  border-radius: 0.375rem;
 }
 .logo-icon {
   width: clamp(1.5rem, 3vw, 1.875rem);
@@ -1083,994 +1173,11 @@ body {
 .footer {
   background: linear-gradient(to right, #f6fbff, #c0e1ff);
   width: 100%;
-  padding: 2.5rem 0;
+
+  padding-top: 9.125rem;
+  padding-bottom: 3rem;
   text-align: center;
-  margin-top: -4.375rem;
+  margin-top: -6.5625rem;
   position: relative;
   z-index: 1;
-}
-.footer img {
-  max-width: 150px; /* Example size, adjust as needed */
-  margin-top: 3.125rem;
-}
-
-/* --- RESPONSIVE STYLES --- */
-
-@media (min-width: 1441px) and (max-width: 1600px) {
-  .container,
-  .cta-banner-wrapper {
-    /* Apply to wrapper too */
-    padding: 0 8rem;
-    max-width: 1440px;
-  }
-
-  .header {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    gap: 1.5rem; /* 24px */
-  }
-  .header-right {
-    gap: 1.5rem; /* 24px */
-  }
-  .info-text {
-    font-size: 0.9375rem; /* 15px */
-  }
-  .primary-button {
-    padding: 1em 1.75em; /* 16px 28px */
-    font-size: 0.9375rem; /* 15px */
-  }
-
-  .analisys-result {
-    margin-top: 3rem;
-    margin-bottom: 1rem;
-  }
-  .title {
-    font-size: 2.125rem; /* 34px */
-  }
-  .analisys-result .header-right {
-    gap: 1.25rem; /* 20px */
-  }
-  .outline-button {
-    padding: 0.625em 1.625em; /* 10px 26px */
-    font-size: 0.9375rem; /* 15px */
-  }
-  .outline-button img {
-    width: 1.125rem; /* 18px */
-    height: 1.125rem; /* 18px */
-  }
-
-  .score-wrapper {
-    margin-top: 3.5rem;
-    margin-bottom: 3.5rem;
-    gap: 2rem; /* 32px */
-  }
-  .card {
-    border-radius: 0.625rem; /* 10px */
-  }
-  .score-card,
-  .skill-gap-card {
-    padding: 2rem; /* 32px */
-  }
-  .score-card h2,
-  .skill-gap-card h2 {
-    font-size: 1.375rem; /* 22px */
-    margin-bottom: 1.25rem; /* 20px */
-  }
-
-  .score-icon-img {
-    max-width: 250px; /* Larger icon */
-    margin-bottom: 1.5rem; /* 24px */
-  }
-
-  .description {
-    font-size: 1rem; /* 16px */
-    line-height: 1.65;
-  }
-  .radar-chart-container img {
-    max-width: 350px;
-  }
-  .radar-legend {
-    font-size: 0.8rem; /* ~13px */
-    gap: 1.2rem;
-  }
-  .skill-item {
-    padding: 0.625em 0.875em; /* 10px 14px */
-    font-size: 0.875rem; /* 14px */
-  }
-
-  .roadmap {
-    margin-top: 2rem;
-    margin-bottom: 3.5rem;
-  }
-  .roadmap > h1 {
-    font-size: 1.75rem; /* 28px */
-    margin-bottom: 0.5rem; /* 8px */
-  }
-  .roadmap > .description {
-    font-size: 1.125rem; /* 18px */
-    margin-bottom: 1.5rem; /* 24px */
-  }
-  .section-divider {
-    margin: 2.5rem 0; /* 40px */
-  }
-  .roadmap-item {
-    gap: 2rem; /* 32px */
-    margin-bottom: 3rem; /* 48px */
-  }
-  .timeline-card {
-    flex-basis: 15rem; /* Fixed basis for this specific range */
-    padding: 1.25rem 1rem; /* 20px 16px */
-  }
-  .timeline-card .date {
-    font-size: 1.375rem; /* 22px */
-  }
-  .timeline-card .role-label,
-  .timeline-card .role-title {
-    font-size: 1.0625rem; /* 17px */
-  }
-  .roadmap-top {
-    gap: 1.5rem; /* 24px */
-  }
-  .role-transition {
-    padding: 1.5rem; /* 24px */
-  }
-  .role-transition h2 {
-    font-size: 1.5rem; /* 24px */
-    margin-bottom: 0.75rem; /* 12px */
-  }
-  .pill.info-pill {
-    font-size: 0.85rem; /* ~13.6px */
-    padding: 0.3125em 0.875em; /* 5px 14px */
-  }
-  .skills-label {
-    font-size: 0.9375rem; /* 15px */
-  }
-  .skill-pill {
-    font-size: 0.875rem; /* 14px */
-    padding: 0.4375em 0.9375em; /* 7px 15px */
-  }
-
-  /* Roadmap Item 1 & 2: .role-transition, .metrics-column, .salary-card side-by-side */
-  .roadmap-item:not(:nth-of-type(3)) .role-transition {
-    flex-basis: calc(50% - 0.75rem); /* 0.75rem is half of 1.5rem gap */
-  }
-  .roadmap-item:not(:nth-of-type(3)) .metrics-column {
-    flex-basis: calc(25% - 0.75rem);
-  }
-  .roadmap-item:not(:nth-of-type(3)) .salary-card {
-    flex-basis: calc(25% - 0.75rem);
-    padding: 1.5rem; /* 24px */
-  }
-
-  /* Roadmap Item 3: role-transition full, metrics columns below */
-  .roadmap-item:nth-of-type(3) .role-transition {
-    flex-basis: 100%;
-    margin-bottom: 1.5rem; /* 24px */
-  }
-  .roadmap-item:nth-of-type(3) .metrics-column {
-    flex-basis: calc(50% - 0.75rem);
-  }
-
-  .metric-card {
-    padding: 1.5rem 1.125rem; /* 24px 18px */
-  }
-  .metric-title {
-    font-size: 0.875rem; /* 14px */
-  }
-  .metric-value {
-    font-size: 2.125rem; /* 34px */
-  }
-  .salary-range {
-    font-size: 1.6em;
-  }
-
-  .courses-title {
-    font-size: 1.5rem; /* 24px */
-    margin-top: 2rem; /* 32px */
-    margin-bottom: 1.25rem; /* 20px */
-  }
-  .courses-section {
-    gap: 1.5rem; /* 24px */
-  }
-  .course-card,
-  .more-courses-card {
-    flex-basis: calc((100% - 3rem) / 3); /* 3rem for two 1.5rem gaps */
-    min-width: 300px;
-  }
-  .course-card h4 {
-    font-size: 1.15em;
-  }
-
-  .skill-section {
-    margin-top: 3.5rem;
-    margin-bottom: 3.5rem;
-  }
-  .skill-section > h1 {
-    font-size: 1.75rem; /* 28px */
-    margin-bottom: 0.5rem; /* 8px */
-  }
-  .main-content {
-    margin-top: 2.5rem; /* 40px */
-    gap: 2rem; /* 32px */
-  }
-  .graph-section,
-  .market-share-section {
-    padding: 2rem; /* 32px */
-  }
-  .graph-section {
-    flex: 6.5; /* Keep proportions */
-  }
-  .market-share-section {
-    flex: 3.5; /* Keep proportions */
-  }
-  .panel-subtitle {
-    font-size: 0.85rem; /* ~13.6px */
-  }
-  .card-subtitle {
-    font-size: 1.4rem; /* ~22.4px */
-  }
-
-  .market-content-wrapper {
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem; /* 32px */
-  }
-
-  .donut-chart-area {
-    flex-basis: auto;
-    width: 100%;
-    max-width: 350px;
-  }
-  .donut-svg {
-    max-width: 140px; /* Larger donut */
-  }
-  .donut-segment {
-    stroke-width: 24; /* Adjust if needed for larger SVG */
-  }
-  .donut-label {
-    font-size: 14px;
-  }
-  .donut-legend {
-    font-size: 0.85rem; /* ~13.6px */
-    gap: 0.625rem; /* 10px */
-    margin-top: 1.25rem; /* 20px */
-  }
-
-  .market-text-content {
-    flex-basis: auto;
-    width: 100%;
-    max-width: 700px;
-    text-align: center;
-  }
-
-  .text-block h3 {
-    font-size: 1rem; /* 16px */
-    margin-bottom: 0.625rem; /* 10px */
-  }
-  .text-block .description {
-    font-size: 1rem; /* 16px */
-    line-height: 1.65;
-  }
-  .cta-banner-wrapper {
-    margin: 3.5rem auto 0 auto; /* Adjust bottom margin if footer follows directly */
-    padding: 0 8rem;
-  }
-  .cta-banner {
-    padding: 4.5rem 4rem; /* 72px 64px */
-    border-radius: 1.25rem; /* 20px */
-  }
-  .cta-content {
-    gap: 3rem; /* 48px */
-  }
-  .cta-text h1 {
-    font-size: 2.75rem; /* 44px */
-    margin-bottom: 1.25rem; /* 20px */
-  }
-  .cta-text p {
-    font-size: 1.1rem; /* ~17.6px */
-    line-height: 1.7;
-    margin-bottom: 2rem; /* 32px */
-  }
-  .cta-button {
-    padding: 1.125em 2.25em; /* 18px 36px */
-    font-size: 1.1rem; /* ~17.6px */
-    border-radius: 0.625rem; /* 10px */
-  }
-  .image-showcase {
-    max-width: 400px;
-    padding: 1.25rem; /* 20px */
-    padding-right: 3.75rem; /* 60px for logos */
-  }
-  .person-image {
-    max-width: 90%;
-  }
-  .background-shape {
-    font-size: 18rem;
-  }
-  .logos .logo-icon {
-    width: 2.25rem; /* 36px */
-    height: 2.25rem; /* 36px */
-    padding: 0.375rem; /* 6px */
-  }
-}
-/* Smaller Desktops & Large Tablets */
-@media (max-width: 1200px) {
-  .container,
-  .cta-banner-wrapper {
-    padding: 0 3rem;
-  }
-
-  .roadmap-item:nth-of-type(3) .roadmap-top {
-    flex-wrap: wrap;
-  }
-  .roadmap-item:nth-of-type(3) .role-transition {
-    flex-basis: 100%;
-    order: 1;
-    margin-bottom: 1.25rem; /* 20px */
-  }
-  .roadmap-item:nth-of-type(3) .metrics-column {
-    flex-basis: calc(50% - 0.5rem); /* 0.5rem is half of 1rem gap */
-    min-width: 280px;
-    order: 2;
-  }
-  .market-content-wrapper {
-    flex-direction: column;
-    align-items: center;
-    gap: 1.5rem; /* 24px */
-  }
-
-  .donut-chart-area {
-    flex-basis: auto;
-    width: 100%;
-    max-width: 300px;
-  }
-
-  .market-text-content {
-    flex-basis: auto;
-    width: 100%;
-    max-width: 600px;
-    text-align: center;
-  }
-
-  .analisys-result .title {
-    font-size: 1.75rem; /* 28px */
-  }
-  .analisys-result .header-right {
-    gap: 0.75rem; /* 12px */
-  }
-  .analisys-result .outline-button {
-    padding: 0.5em 1.125em; /* 8px 18px */
-  }
-
-  .score-wrapper {
-    gap: 1.5rem; /* 24px */
-  }
-  .score-card {
-    padding: 1.5rem; /* 24px */
-  }
-  .score-icon-img {
-    max-width: 200px; /* Adjust size */
-  }
-  .score-value {
-    font-size: 3.5rem; /* This was in base, check if it needs override */
-  }
-  .skill-gap-card {
-    padding: 1.5rem; /* 24px */
-  }
-  .radar-chart-container img {
-    max-width: 280px;
-  }
-
-  .roadmap h1 {
-    font-size: 1.375rem; /* 22px */
-  }
-  .roadmap-item {
-    gap: 1.25rem; /* 20px */
-  }
-  .timeline-card {
-    flex-basis: 12rem;
-    padding: 0.875rem 0.625rem; /* 14px 10px */
-  }
-  .timeline-card .date {
-    font-size: 1.125rem; /* 18px */
-  }
-
-  .role-transition {
-    flex-basis: calc(60% - 0.5rem);
-    padding: 1rem; /* 16px */
-  }
-  .metrics-column {
-    flex-basis: calc(40% - 0.5rem);
-  }
-  .salary-card {
-    flex: 1 1 240px; /* Or more fluid basis */
-    padding: 1.25rem; /* 20px */
-  }
-
-  .courses-title {
-    font-size: 1.25rem; /* 20px */
-  }
-
-  .course-card,
-  .more-courses-card {
-    flex-basis: calc(
-      33.333% - 0.833rem
-    ); /* Adjust gap calculation for 3 items */
-    min-width: 260px;
-  }
-
-  .skill-section h1 {
-    font-size: 1.375rem; /* 22px */
-  }
-  .main-content {
-    gap: 1.5rem; /* 24px */
-  }
-  .graph-section {
-    flex: 6.5; /* Keep proportions */
-    padding: 1.5rem; /* 24px */
-  }
-  .market-share-section {
-    flex: 3.5; /* Keep proportions */
-    padding: 1.5rem; /* 24px */
-  }
-  .donut-chart-area {
-    /* flex-basis: 130px;  Let it be auto based on content */
-  }
-  .donut-svg {
-    max-width: 110px; /* Adjust size */
-  }
-
-  .cta-banner-wrapper {
-    margin-left: 3rem;
-    margin-right: 3rem;
-  }
-  .cta-banner {
-    padding: 3rem 2rem; /* 48px 32px */
-  }
-  .cta-text h1 {
-    font-size: 2rem; /* 32px */
-  }
-  .image-showcase {
-    padding-right: 2.8125rem; /* 45px */
-    max-width: 350px;
-  }
-  .logos .logo-icon {
-    width: 1.75rem; /* 28px */
-    height: 1.75rem; /* 28px */
-  }
-}
-
-/* Tablets */
-@media (max-width: 992px) {
-  .container,
-  .cta-banner-wrapper {
-    padding: 0 2rem;
-  }
-  .cta-banner-wrapper {
-    margin-left: 2rem;
-    margin-right: 2rem;
-  }
-  .cta-banner {
-    padding: 3rem; /* 48px */
-  }
-  .header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1.5rem;
-  }
-  .header-right {
-    flex-direction: column; /* Stack text and button */
-    text-align: left;
-    gap: 1rem;
-    max-width: none;
-    align-items: flex-start;
-  }
-  .header-right .primary-button {
-    width: auto; /* Let button size naturally */
-  }
-
-  .analisys-result {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
-  }
-  .analisys-result .header-right {
-    width: 100%;
-    justify-content: flex-start;
-    flex-direction: row; /* Buttons side-by-side if space */
-    flex-wrap: wrap;
-  }
-  .title {
-    font-size: 1.75rem; /* 28px, already clamped, this is fine */
-  }
-  .score-wrapper {
-    flex-direction: column;
-    gap: 1.5rem; /* 24px */
-  }
-  .score-card,
-  .skill-gap-card {
-    max-width: 100%; /* Allow full width */
-  }
-  .roadmap h1,
-  .skill-section h1,
-  .courses-title {
-    font-size: 1.375rem; /* 22px, already clamped */
-  }
-  .courses-section {
-    justify-content: space-between; /* This might create uneven spacing with odd items */
-    gap: 1rem; /* Ensure consistent gap */
-  }
-  .course-card,
-  .more-courses-card {
-    flex-basis: calc(50% - 0.5rem); /* 0.5rem is half of 1rem gap */
-    max-width: calc(50% - 0.5rem);
-  }
-  .main-content {
-    flex-direction: column;
-    gap: 1.5rem; /* 24px */
-  }
-  .graph-section,
-  .market-share-section {
-    padding: 1.5rem; /* 24px */
-    flex-basis: auto; /* Override previous flex sizing */
-  }
-  .cta-content {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-  .cta-text {
-    margin-bottom: 2rem; /* 32px */
-    flex-basis: auto;
-  }
-  .image-showcase {
-    max-width: 320px;
-  }
-  .role-transition {
-    flex-basis: 100%; /* Full width in this layout */
-  }
-  .metrics-column,
-  .salary-card {
-    flex-basis: calc(50% - 0.5rem); /* Side by side if possible */
-    min-width: 200px; /* Ensure they don't get too squished */
-  }
-  .roadmap-item {
-    /* Stack timeline card and content */
-    flex-direction: column;
-    align-items: stretch; /* Make children full width */
-  }
-  .timeline-card {
-    flex-basis: auto; /* Full width */
-    text-align: center;
-  }
-  .timeline-connector {
-    display: none; /* Hide connector line */
-  }
-}
-
-/* Small Tablets & Large Phones */
-@media (max-width: 768px) {
-  .container,
-  .cta-banner-wrapper {
-    padding: 0 1.5rem;
-  }
-  .cta-banner-wrapper {
-    margin-left: 1.5rem;
-    margin-right: 1.5rem;
-  }
-  .cta-banner {
-    padding: 2rem; /* 32px */
-  }
-  .header-right {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .primary-button,
-  .outline-button {
-    width: 100%; /* Make buttons full width */
-    justify-content: center;
-  }
-  .analisys-result .header-right {
-    flex-direction: column;
-    align-items: stretch;
-  }
-  .gap-content {
-    flex-direction: column;
-    align-items: center;
-  }
-  .radar-chart-container img {
-    max-width: 300px;
-  }
-  .gap-list {
-    width: 100%;
-  }
-  .score-icon-img {
-    max-width: 180px;
-  }
-  .score-value {
-    font-size: 3rem;
-  }
-
-  .role-transition,
-  .metric-card,
-  .salary-card {
-    padding: 1rem; /* 15px */
-  }
-  .metrics-column,
-  .salary-card {
-    flex-basis: 100%; /* Stack these cards */
-  }
-  .salary-range {
-    font-size: 1.3em;
-  }
-  .course-card,
-  .more-courses-card {
-    flex-basis: 100%;
-    max-width: 100%;
-  }
-  .graph-legend {
-    position: static; /* Bring legend into flow */
-    flex-direction: column;
-    align-items: flex-start;
-    margin-top: 0.625rem; /* 10px */
-    gap: 0.5rem; /* 8px */
-    width: 100%;
-  }
-  .chart-area-wrapper {
-    flex-direction: column; /* Stack Y-axis and chart on small screens */
-    align-items: center;
-  }
-  .y-axis-labels {
-    flex-direction: row; /* Horizontal Y labels */
-    width: 100%;
-    height: auto;
-    justify-content: space-around;
-    padding-right: 0;
-    margin-bottom: 0.5rem;
-  }
-  .y-axis-labels span:last-child {
-    transform: none;
-  }
-  .plot-area {
-    height: 200px; /* Adjust height */
-  }
-
-  .callout {
-    font-size: 0.7rem;
-    padding: 0.25em 0.5em; /* 4px 8px */
-  }
-  /* Callout positions might need significant readjustment or hiding on small screens */
-  .callout-start {
-    top: 80%;
-    left: 15%;
-  }
-  .callout-non-ai-end {
-    top: 55%;
-    right: 10%;
-  }
-  .callout-ai-end {
-    top: 25%;
-    right: 10%;
-  }
-
-  .market-content-wrapper {
-    flex-direction: column;
-    align-items: center;
-  }
-  .donut-chart-area {
-    margin-bottom: 1.25rem; /* 20px */
-    flex-basis: auto;
-  }
-  .cta-text h1 {
-    font-size: 1.75rem;
-  }
-  .cta-text p {
-    font-size: 0.9rem;
-  }
-  .cta-button {
-    padding: 0.75em 1.5em; /* 12px 24px */
-    font-size: 0.9rem;
-  }
-}
-
-/* Phones */
-@media (max-width: 576px) {
-  .header {
-    flex-direction: row !important;
-    padding: 12px 16px;
-    align-items: center;
-  }
-
-  .info-text {
-    display: none !important;
-  }
-  .analisys-result .header-right {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-
-    width: 100%;
-  }
-  .outline-button {
-    flex: 1;
-    display: flex;
-    /*border: none;*/
-    font-size: 0.8125rem;
-    font-weight: 600;
-
-    white-space: normal;
-  }
-
-  .score-card,
-  .skill-gap-card {
-    margin-top: 1rem;
-    align-items: center;
-    text-align: center;
-  }
-
-  .score-icon-img {
-    max-width: 165px;
-
-    margin-bottom: 1rem;
-  }
-
-  .score-value {
-    font-size: 2.5rem;
-  }
-  .score-value .total {
-    font-size: 0.875rem;
-  }
-
-  .description {
-    /* General description text */
-    font-size: 0.775rem; /* Common mobile paragraph size */
-    line-height: 1.6;
-  }
-  .score-card .description {
-    text-align: center;
-  }
-  .skill-gap-card .description {
-    text-align: left; /* Or center, depending on content */
-  }
-
-  .gap-content {
-    /* flex-direction: column; align-items: center; from 768px is good */
-    gap: 1.5rem;
-  }
-
-  .radar-chart-container img {
-    max-width: 100%; /* Ensure radar chart is responsive */
-    height: auto;
-    max-height: 240px; /* Cap height if needed */
-  }
-
-  .gap-list {
-    width: 100%;
-  }
-
-  .skills-list .skill-item {
-    font-size: 0.75rem; /* Smaller skill pills */
-    padding: 0.375em 0.625em;
-  }
-
-  .roadmap > h1,
-  .skill-section > h1,
-  .courses-title {
-    font-size: 1.25rem; /* Consistent section titles */
-    text-align: center;
-  }
-  .roadmap > .description {
-    /* Subtitle for roadmap */
-    font-size: 0.875rem;
-    text-align: center;
-    margin-bottom: 1.5rem;
-  }
-
-  .timeline-card {
-    padding: 0.75rem;
-  }
-  .timeline-card .date {
-    font-size: 1rem;
-  }
-  .timeline-card .role-title,
-  .timeline-card .role-label {
-    font-size: 0.875rem;
-  }
-
-  .role-transition {
-    padding: 1rem;
-  }
-  .role-transition h2 {
-    font-size: 1.1rem;
-    text-align: center;
-  }
-
-  .skills-label,
-  .skill-pill {
-    font-size: 0.75rem;
-  }
-  .skill-pill {
-    padding: 0.375em 0.625em;
-  }
-  .pill.info-pill {
-    /* Specific info pill in roadmap */
-    font-size: 0.7rem;
-  }
-
-  .metric-card {
-    padding: 1rem;
-  }
-  .metric-title {
-    font-size: 0.75rem;
-  }
-  .metric-value {
-    font-size: 1.75rem; /* Smaller metric values */
-  }
-  .metric-description {
-    font-size: 0.7rem;
-  }
-
-  .salary-card {
-    padding: 1rem;
-  }
-  .salary-range {
-    font-size: 1.3em; /* Relative to parent */
-  }
-  .salary-label,
-  .salary-description,
-  .salary-pill {
-    font-size: 0.75rem;
-  }
-
-  .course-card {
-    padding: 1rem;
-  }
-  .course-card h4 {
-    font-size: 0.9375rem;
-    text-align: center;
-  }
-  .course-card p {
-    font-size: 0.8125rem;
-    text-align: center;
-  }
-  .expand-icon {
-    font-size: 1rem;
-    top: 0.5rem;
-    right: 0.5rem;
-  }
-  .more-courses-card {
-    padding: 1.5rem 1rem;
-  }
-
-  /* Graph Section */
-  .graph-section,
-  .market-share-section {
-    padding: 1rem;
-  }
-  .panel-subtitle {
-    font-size: 0.75rem;
-  }
-  .card-subtitle {
-    /* For market share title */
-    font-size: 1rem;
-    text-align: center;
-  }
-  .graph-legend {
-    /* position: static; flex-direction: column; align-items: flex-start; good from 768px */
-    font-size: 0.7rem;
-    gap: 0.375rem;
-  }
-
-  .y-axis-labels {
-    font-size: 0.65rem; /* Smallest legible size for axis */
-    margin-bottom: 0.25rem; /* Reduce space if y-axis is above chart */
-    justify-content: space-between; /* Adjust spacing for fewer labels if needed */
-  }
-  .x-axis-labels {
-    font-size: 0.65rem;
-    margin-top: 0.5rem; /* Reduce space after chart */
-  }
-  .plot-area {
-    height: 180px; /* Adjust chart height */
-  }
-
-  .callout {
-    display: none; /* Hide callouts on smallest screens, usually too cluttered */
-  }
-
-  /* Donut Chart Area */
-  .donut-chart-area {
-    width: 100%;
-    max-width: 200px; /* Control max size of donut container */
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .donut-svg {
-    max-width: 120px; /* Control actual SVG size */
-  }
-  .donut-segment {
-    stroke-width: 20; /* Adjust stroke for smaller donut */
-  }
-  .donut-label {
-    font-size: 10px; /* Ensure labels are small but readable */
-    /* transform: rotate(90deg) translate(0, 2px); Adjust transform if needed for centering */
-  }
-  .donut-label.ai-label {
-    /* fill: #3576ea; Or keep white if gradient is dark enough */
-  }
-  .donut-legend {
-    font-size: 0.75rem;
-    align-items: center; /* Center legend items */
-    margin-top: 1rem;
-    width: 100%;
-    justify-content: center;
-    flex-direction: row; /* Could be row if space permits or keep column */
-    flex-wrap: wrap; /* Allow legend items to wrap */
-  }
-
-  .market-text-content {
-    text-align: center;
-  }
-  .text-block h3 {
-    font-size: 0.9375rem;
-  }
-  .text-block .description {
-    /* Already covered by general .description */
-    font-size: 0.875rem;
-  }
-
-  /* CTA Banner */
-  .cta-banner {
-    padding: 1.5rem;
-  }
-  .cta-text h1 {
-    font-size: 1.5rem; /* Smaller CTA title */
-    line-height: 1.3;
-    margin-bottom: 1rem;
-  }
-  .cta-text p {
-    font-size: 0.875rem; /* Smaller CTA paragraph */
-    margin-bottom: 1.5rem;
-  }
-  .cta-button {
-    font-size: 0.9375rem; /* Consistent button size */
-    padding: 0.75em 1.25em;
-    width: 100%; /* Full width CTA button */
-    max-width: 280px; /* Optional max-width for the button */
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .cta-image-area {
-    max-width: 280px; /* Control image area size */
-    margin-top: 1.5rem;
-  }
-  .image-showcase {
-    padding: 0.75rem;
-    padding-right: 2.5rem; /* Space for logos */
-  }
-  .person-image {
-    max-width: 80%;
-  }
-  .logo-icon {
-    width: 1.5rem;
-    height: 1.5rem;
-    padding: 0.25rem;
-  }
-  .logos {
-    gap: 0.5rem;
-    right: 0.75rem;
-  }
-  .background-shape {
-    font-size: 10rem; /* Smaller background letters */
-  }
-
-  .footer {
-    padding: 2rem 0;
-    margin-top: -3rem; /* Adjust overlap if needed */
-  }
-  .footer img {
-    max-width: 120px;
-    margin-top: 2.5rem;
-  }
 }
