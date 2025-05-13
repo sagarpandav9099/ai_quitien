@@ -4,548 +4,98 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AI Quotient Analysis Report</title>
-    <link rel="stylesheet" href="styles2.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
   </head>
   <body>
-    <div class="page-container">
-      <!-- Header -->
-      <header class="header">
-        <img src="images/logo.svg" alt="AI Quotient Logo" class="logo-img" />
-        <div class="header-right">
-          <p class="info-text">
-            Learn in-demand AI/ML skills and stay ahead in today’s changing tech
-            landscape.
-          </p>
-          <button class="primary-button">Connect with FAANG Expert</button>
-        </div>
-      </header>
+    <canvas id="scoreChart" width="300" height="200"></canvas>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-      <!-- Analysis Results Title Bar -->
-      <section class="analysis-result">
-        <h1 class="section-title analysis-title">
-          Analysis Results for
-          <span class="highlight">[Firstname] [Lastname]</span>
-        </h1>
-        <div class="analysis-actions">
-          <button class="outline-button">
-            <img src="images/share-icon.svg" alt="share-icon" />
-            Share This Tool
-          </button>
-          <button class="outline-button">
-            <img src="images/copy-icon.svg" alt="copy-icon" />
-            Copy link to your results
-          </button>
-        </div>
-      </section>
+    <script>
+      const ctx = document.getElementById("scoreChart").getContext("2d");
 
-      <!-- Score Section -->
-      <section class="score-wrapper">
-        <!-- Score Card -->
-        <div class="card score-card">
-          <h2 class="card-subtitle">
-            Your <span class="highlight">AI-Readiness</span> Score
-          </h2>
-          <img
-            src="images/score-icon.svg"
-            alt="AI Readiness Score Gauge: 64/100"
-            class="score-gauge-img"
-          />
-          <p class="description">
-            You’re on your way! Your profile shows potential, but there's room
-            to grow when it comes to aligning with AI-first roles at top tech
-            companies ✨🚀
-          </p>
-        </div>
+      const score = 64;
 
-        <!-- Skill Gap Card -->
-        <div class="card skill-gap-card">
-          <h2 class="card-subtitle">
-            Your <span class="highlight">skill gaps</span>
-          </h2>
-          <div class="gap-content">
-            <div class="radar-chart-container">
-              <img
-                src="images/score-gap.svg"
-                alt="Skill Gap Radar Chart"
-                class="radar-chart-img"
-              />
-              <div class="radar-legend">
-                <span><i class="dot radar-dot-user"></i> Your skill graph</span>
-                <span
-                  ><i class="dot radar-dot-required"></i> Skill graph required
-                  for your level</span
-                >
-              </div>
-            </div>
-            <div class="gap-list">
-              <p class="description">
-                You’re on your way! Your profile shows potential, but there's
-                room to grow when it comes to aligning with AI-first. The
-                following skills need to be sharpened:
-              </p>
-              <div class="skills-list">
-                <div class="skill-item">
-                  <img src="images/data-1.svg" alt="" />Brush up on Data
-                  Analysis
-                </div>
-                <div class="skill-item">
-                  <img src="images/data-2.svg" alt="" />Learn systems
-                  engineering
-                </div>
-                <div class="skill-item">
-                  <img src="images/data-3.svg" alt="" />Brush up on Data
-                  Analysis
-                </div>
-                <div class="skill-item">
-                  <img src="images/data-4.svg" alt="" />Brush up on Data
-                  Analysis
-                </div>
-                <div class="skill-item">
-                  <img src="images/data-5.svg" alt="" />Brush up on Data
-                  Analysis
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      const values = [47, 3, 14, 3, 10, 3, 20];
+      const colors = [
+        "#FFA800",
+        "transparent",
+        "#FFC960",
+        "transparent",
+        "#FEEA3A",
+        "transparent",
+        "#7FE47E",
+      ];
 
-      <!-- ======================= Roadmap Section Start ======================= -->
-      <section class="roadmap-container">
-        <h1 class="section-main-title">
-          [Firstname]'s 2-Year
-          <span class="highlight">Personalized Career Roadmap</span>
-        </h1>
-        <p class="section-subtitle">
-          To becoming AI-Enabled [role suggested for user]
-        </p>
-        <hr class="section-divider" />
+      new Chart(ctx, {
+        type: "doughnut",
+        data: {
+          datasets: [
+            {
+              data: values,
+              backgroundColor: colors,
 
-        <div class="roadmap-timeline-wrapper">
-          <!-- Roadmap Item 1: Prepare -->
-          <div class="roadmap-item">
-            <div class="card timeline-card blue-tint">
-              <p class="date">April - June, 2025</p>
-              <p class="role-label">Current Role:</p>
-              <p class="role-title">Software Engineer 1</p>
-            </div>
-            <div class="timeline-connector">
-              <div class="timeline-icon flag"></div>
-            </div>
-            <div class="timeline-main-content">
-              <div class="dashboard-top">
-                <div class="card role-transition">
-                  <span class="pill info-pill">You're Here!</span>
-                  <h2>Prepare for your role transition</h2>
-                  <p>
-                    Our profile shows potential, but there's room to grow when
-                    it comes to aligning with AI-first roles...
-                  </p>
-                  <p class="skills-label">Skills you will need to gain</p>
-                  <div class="skills-pills">
-                    <span class="pill skill-pill">Data Analysis</span>
-                    <span class="pill skill-pill">Data Analysis</span>
-                    <span class="pill skill-pill">Data Analysis</span>
-                  </div>
-                </div>
-                <div class="metrics-column">
-                  <div class="card metric-card risk-card">
-                    <p class="metric-title">Role Redundancy Risk</p>
-                    <p class="metric-value red">
-                      80% <img src="images/arow-1.svg" alt="Up trend" />
-                    </p>
-                    <p class="metric-description red">
-                      Recruiters seek AI-savvy candidates
-                    </p>
-                  </div>
-                  <div class="card metric-card reduction-card">
-                    <p class="metric-title">Reduction in layoff risks</p>
-                    <p class="metric-value green">
-                      75% <img src="images/arow-2.svg" alt="Up trend" />
-                    </p>
-                    <p class="metric-description green">
-                      Layoff risk reduction after upskilling
-                    </p>
-                  </div>
-                </div>
-                <div class="card salary-card">
-                  <p class="salary-range">$100k - $200k</p>
-                  <div class="salary-breakdown">
-                    <span class="pill salary-pill fixed">30% Fixed</span>
-                    <span class="pill salary-pill variable">40% Variable</span>
-                    <span class="pill salary-pill equity">30% Equity</span>
-                  </div>
-                  <p class="salary-label">Current Industry Average</p>
-                  <p class="salary-description">Salary Range for your role</p>
-                  <div class="graph-placeholder">
-                    <svg viewBox="0 0 100 30" preserveAspectRatio="none">
-                      <path
-                        d="M 0 20 Q 15 10, 30 15 T 60 12 T 90 25 L 100 22"
-                        fill="none"
-                        stroke="#a0d4f6"
-                        stroke-width="1.5"
-                      />
-                    </svg>
-                  </div>
-                </div>
-              </div>
+              borderRadius: 8,
+              borderWidth: 0,
+              cutout: "92%",
+              circumference: 180,
+              rotation: 270,
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { display: false },
+            tooltip: { enabled: false },
+          },
+        },
+        plugins: [
+          {
+            id: "score-and-marker",
+            afterDraw(chart) {
+              const { ctx, chartArea, width } = chart;
+              const cx = width / 2;
+              const cy = chartArea.bottom;
 
-              <h3 class="section-title courses-title">
-                IK courses <span class="highlight">recommended for John</span>
-              </h3>
-              <div class="courses-section">
-                <div class="card course-card">
-                  <div class="course-image-container">
-                    <img src="images/course.svg" alt="course" />
-                    <span class="expand-icon">↗</span>
-                  </div>
-                  <h4>AI-Enabled Back-end Engineering</h4>
-                  <p>
-                    A short description of the course to hook the user and
-                    convince them to purchase it
-                  </p>
-                </div>
-                <div class="card course-card">
-                  <div class="course-image-container">
-                    <img src="images/course.svg" alt="course" />
-                    <span class="expand-icon">↗</span>
-                  </div>
-                  <h4>AI-Enabled Back-end Engineering</h4>
-                  <p>
-                    A short description of the course to hook the user and
-                    convince them to purchase it
-                  </p>
-                </div>
-                <div class="card course-card">
-                  <div class="course-image-container">
-                    <img src="images/course.svg" alt="course" />
-                    <span class="expand-icon">↗</span>
-                  </div>
-                  <h4>AI-Enabled Back-end Engineering</h4>
-                  <p>
-                    A short description of the course to hook the user and
-                    convince them to purchase it
-                  </p>
-                </div>
-                <div class="card more-courses-card">
-                  <h4>We've got more</h4>
-                  <p>
-                    Check out our array of AI/ML courses tailored to upleveling
-                    your career.
-                  </p>
-                  <a href="#" class="btn">View all courses</a>
-                </div>
-              </div>
-            </div>
-            <!-- /timeline-main-content -->
-          </div>
-          <!-- /roadmap-item 1 -->
+              // Draw center score text
+              ctx.save();
+              ctx.font = "bold 32px sans-serif";
+              ctx.fillStyle = "#1A1A2E";
+              ctx.textAlign = "center";
+              ctx.fillText(`${score}`, cx, cy - 10);
+              ctx.font = "bold 14px sans-serif";
+              ctx.fillText(`/100`, cx + 28, cy - 10);
+              ctx.restore();
 
-          <!-- Roadmap Item 2: Land Role -->
-          <div class="roadmap-item">
-            <div class="card timeline-card blue-tint">
-              <p class="date">June - Sept, 2025</p>
-              <p class="role-label">Transition to:</p>
-              <p class="role-title">AI - Software Engineer</p>
-            </div>
-            <div class="timeline-connector">
-              <div class="timeline-icon circle"></div>
-            </div>
-            <div class="timeline-main-content">
-              <div class="timeline-row-grid">
-                <div class="card details-card">
-                  <h2>Land your dream role</h2>
-                  <p>
-                    Our profile shows potential, but there's room to grow when
-                    it comes to aligning with AI-first roles at top tech
-                    companies.. our profile shows potential, but there's room to
-                    grow when it comes to aligning with AI-first roles at top
-                    tech companies.
-                  </p>
-                  <p class="skills-label">
-                    Skills you would have mastered at this stage
-                  </p>
-                  <div class="skills-pills">
-                    <span class="pill skill-pill">Data Analysis</span>
-                    <span class="pill skill-pill">Data Analysis</span>
-                    <span class="pill skill-pill">Data Analysis</span>
-                  </div>
-                </div>
-                <div class="card salary-card">
-                  <p class="salary-range">$100k - $200k</p>
-                  <div class="salary-breakdown">
-                    <span class="pill salary-pill fixed">30% Fixed</span>
-                    <span class="pill salary-pill variable">40% Variable</span>
-                    <span class="pill salary-pill equity">30% Equity</span>
-                  </div>
-                  <p class="salary-label">Current Industry Average</p>
-                  <p class="salary-description">Salary Range for your role</p>
-                  <div class="graph-placeholder">
-                    <svg viewBox="0 0 100 30" preserveAspectRatio="none">
-                      <path
-                        d="M 0 18 Q 15 25, 30 20 T 60 15 T 90 18 L 100 15"
-                        fill="none"
-                        stroke="#a0d4f6"
-                        stroke-width="1.5"
-                      />
-                    </svg>
-                  </div>
-                </div>
-              </div>
-              <!-- /timeline-row-grid -->
-            </div>
-            <!-- /timeline-main-content -->
-          </div>
-          <!-- /roadmap-item 2 -->
+              // Draw yellow circle marker at top edge of arc
+              const outerR = chart.outerRadius;
+              const cutout =
+                parseFloat(chart.config._config.data.datasets[0].cutout) / 100;
+              const innerR = outerR * cutout;
+              const radius = outerR - 4; // push toward outer edge
 
-          <!-- Roadmap Item 3: Turbocharge -->
-          <div class="roadmap-item">
-            <div class="card timeline-card green-tint">
-              <p class="date">Sept - Oct, 2025</p>
-              <p class="role-label">Uplevel to:</p>
-              <p class="role-title">Senior AI Software Engineer</p>
-            </div>
-            <div class="timeline-connector last">
-              <!-- The "last" class targets this -->
-              <div class="timeline-icon trophy"></div>
-              <!-- The ::after pseudo-element will be hidden by CSS -->
-            </div>
-            <div class="timeline-main-content">
-              <div class="timeline-row-grid wide-details">
-                <div class="card details-card green-border">
-                  <h2>Turbocharge your career</h2>
-                  <p>
-                    Our profile shows potential, but there's room to grow when
-                    it comes to aligning with AI-first roles at top tech
-                    companies.. our profile shows potential, but there's room to
-                    grow when it comes to aligning with AI-first roles at top
-                    tech companies.
-                  </p>
-                  <p class="skills-label">
-                    Skills you would have mastered at this stage
-                  </p>
-                  <div class="skills-pills">
-                    <span class="pill skill-pill green"
-                      >FAANG Interview practice</span
-                    >
-                    <span class="pill skill-pill green"
-                      >Data structures and Algorithms</span
-                    >
-                    <span class="pill skill-pill green">Data Analysis</span>
-                    <span class="pill skill-pill green"
-                      >FAANG Interview practice</span
-                    >
-                    <span class="pill skill-pill green"
-                      >Data structures and Algorithms</span
-                    >
-                  </div>
-                </div>
-                <div class="card stats-panel green-tint">
-                  <div class="stat-block">
-                    <label>AI Readiness</label>
-                    <div class="value highlight">
-                      ~90<span class="unit">/100</span>
-                    </div>
-                    <p class="note">Up from your current score</p>
-                  </div>
-                  <div class="stat-block">
-                    <label>Increase in Net Worth</label>
-                    <div class="value">$345k</div>
-                    <p class="note">+21.01% from your current trajectory</p>
-                  </div>
-                  <div class="stat-block">
-                    <label>Expected Salary Range</label>
-                    <div class="value">$100k - $200k</div>
-                    <p class="note">+21.01% from your current Profile</p>
-                  </div>
-                  <div class="stat-block">
-                    <label>Average Salary Hike</label>
-                    <div class="value">50%</div>
-                    <p class="note">+21.01% from your current Profile</p>
-                  </div>
-                </div>
-              </div>
-              <!-- /timeline-row-grid -->
-            </div>
-            <!-- /timeline-main-content -->
-          </div>
-          <!-- /roadmap-item 3 -->
-        </div>
-        <!-- /roadmap-timeline-wrapper -->
-      </section>
-      <!-- Roadmap Section End -->
+              const angle = Math.PI + (Math.PI * score) / 100;
+              const x = cx + radius * Math.cos(angle);
+              const y = cy + radius * Math.sin(angle);
 
-      <!-- Earning Potential / Skill section-->
-      <section class="skill-container">
-        <h1 class="section-title skills-title">
-          [Firstname]’s earning potential with
-          <span class="highlight">AI skills</span>
-        </h1>
-        <hr class="section-divider" />
-        <div class="main-content">
-          <div class="panel graph-section">
-            <div class="panel-header">
-              <span class="panel-subtitle">Projection</span>
-              <h2 class="card-subtitle">Net worth with & without AI skills</h2>
-              <div class="graph-legend">
-                <span><i class="dot ai-enhanced"></i> AI-Enhanced</span>
-                <span><i class="dot non-ai"></i> Non-AI</span>
-              </div>
-            </div>
-            <div class="chart-area">
-              <!-- Placeholder SVG -->
-              <svg
-                viewBox="0 0 600 300"
-                preserveAspectRatio="xMidYMid meet"
-                class="line-chart-svg"
-              >
-                <text x="10" y="35" class="axis-label">4k</text>
-                <line x1="40" y1="30" x2="580" y2="30" class="axis-line" />
-                <text x="10" y="105" class="axis-label">3k</text>
-                <line x1="40" y1="100" x2="580" y2="100" class="axis-line" />
-                <text x="10" y="175" class="axis-label">2k</text>
-                <line x1="40" y1="170" x2="580" y2="170" class="axis-line" />
-                <text x="10" y="245" class="axis-label">1k</text>
-                <line x1="40" y1="240" x2="580" y2="240" class="axis-line" />
-                <text x="10" y="300" class="axis-label">0</text>
-                <line x1="40" y1="295" x2="580" y2="295" class="axis-line" />
-                <path
-                  d="M 50 250 Q 200 220, 350 200 T 580 175"
-                  class="line non-ai-line"
-                />
-                <path
-                  d="M 50 250 Q 200 180, 350 100 T 580 35"
-                  class="line ai-line"
-                />
-                <text x="60" y="315" class="axis-label x-axis">2025</text>
-                <text x="160" y="315" class="axis-label x-axis">2026</text>
-                <text x="260" y="315" class="axis-label x-axis">2027</text>
-                <text x="360" y="315" class="axis-label x-axis">2028</text>
-                <text x="460" y="315" class="axis-label x-axis">2029</text>
-                <text x="560" y="315" class="axis-label x-axis">2030</text>
-                <text x="620" y="315" class="axis-label x-axis">2031</text>
-              </svg>
-              <div class="data-callout current-pos">
-                You're here<br /><strong>$80k - $100k</strong>
-              </div>
-              <div class="data-callout non-ai-future">$200k - $300k</div>
-              <div class="data-callout ai-future">$400k - $450k</div>
-            </div>
-          </div>
-          <div class="panel market-share-section">
-            <div class="panel-header">
-              <span class="panel-subtitle">[domain]'s Future</span>
-              <h2 class="card-subtitle">
-                AI-enabled Job Market share in 5 years
-              </h2>
-            </div>
-            <div class="market-content-wrapper">
-              <div class="donut-chart-area">
-                <!-- Placeholder SVG -->
-                <svg viewBox="0 0 120 120" class="donut-svg">
-                  <circle
-                    cx="60"
-                    cy="60"
-                    r="50"
-                    class="donut-segment non-ai-segment"
-                  />
-                  <circle
-                    cx="60"
-                    cy="60"
-                    r="50"
-                    class="donut-segment ai-segment"
-                  />
-                  <text x="25" y="65" class="donut-label non-ai-label">
-                    45%
-                  </text>
-                  <text x="95" y="65" class="donut-label ai-label">55%</text>
-                </svg>
-                <div class="donut-legend">
-                  <span><i class="dot ai-enabled"></i> AI-Enabled Jobs</span>
-                  <span><i class="dot non-ai-jobs"></i> Non-AI Jobs</span>
-                </div>
-              </div>
-              <div class="market-text-content">
-                <div class="text-block">
-                  <h3>Current trends for your domain</h3>
-                  <p>
-                    You're on your way! Your profile shows potential, but
-                    there's room to grow when it comes to aligning with
-                    AI-first.
-                  </p>
-                </div>
-                <div class="text-block">
-                  <h3>Future trends for your domain</h3>
-                  <p>
-                    You're on your way! Your profile shows potential, but
-                    there's room to grow when it comes to aligning with
-                    AI-first. The following skills need to be sharpened:
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- Skill Section End -->
+              // Outer yellow circle (shadowed)
+              ctx.beginPath();
+              ctx.arc(x, y, 10, 0, 2 * Math.PI);
+              ctx.fillStyle = "#FFF200";
+              ctx.shadowColor = "#000";
+              ctx.shadowBlur = 4;
+              ctx.fill();
 
-      <!-- CTA Banner -->
-      <section class="cta-banner">
-        <div class="cta-content">
-          <div class="cta-text">
-            <h1>Take the First Step—Join the AI Revolution</h1>
-            <p>
-              Your competition is already moving. AI isn’t the future—it’s
-              today’s baseline. Reserve your spot now for an exclusive webinar
-              with an AI career expert.
-            </p>
-            <button class="cta-button">Connect with FAANG Expert</button>
-          </div>
-          <div class="cta-image-area">
-            <div class="image-showcase">
-              <span class="background-shape">R</span>
-              <img
-                src="images/person-placeholder.svg"
-                alt="AI Career Expert"
-                class="person-image"
-              />
-              <div class="logos">
-                <img
-                  src="images/facebook-logo.svg"
-                  alt="Facebook Logo"
-                  class="logo-icon"
-                />
-                <img
-                  src="images/amazon-logo.svg"
-                  alt="Amazon Logo"
-                  class="logo-icon"
-                />
-                <img
-                  src="images/apple-logo.svg"
-                  alt="Apple Logo"
-                  class="logo-icon"
-                />
-                <img
-                  src="images/netflix-logo.svg"
-                  alt="Netflix Logo"
-                  class="logo-icon"
-                />
-                <img
-                  src="images/google-logo.svg"
-                  alt="Google Logo"
-                  class="logo-icon"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- CTA Banner End -->
-    </div>
-    <!-- /page-container -->
+              // Inner white dot for highlight
+              ctx.beginPath();
+              ctx.arc(x, y, 5, 0, 2 * Math.PI);
+              ctx.fillStyle = "#ffffff";
+              ctx.shadowBlur = 0;
+              ctx.fill();
+            },
+          },
+        ],
+      });
+    </script>
   </body>
 </html>

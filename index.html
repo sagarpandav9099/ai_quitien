@@ -18,7 +18,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles1.css" />
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <div class="container">
@@ -53,11 +53,9 @@
       <div class="score-wrapper">
         <div class="card score-card">
           <h2>Your <span class="highlight">AI-Readiness</span> Score</h2>
-          <img
-            src="images/score-icon.svg"
-            alt="AI Readiness Score Icon"
-            class="score-icon-img"
-          />
+          <div class="chart-wrapper">
+            <canvas id="scoreChart" width="200" height="100"></canvas>
+          </div>
           <p class="description">
             You’re on your way! Your profile shows potential, but there's room
             to grow when it comes to aligning with AI-first roles at top tech
@@ -68,7 +66,7 @@
           <h2>Your <span class="highlight">skill gaps</span></h2>
           <div class="gap-content">
             <div class="radar-chart-container">
-              <img src="images/score-gap.svg" alt="skill-gap radar chart" />
+              <canvas id="radarChart" width="311" height="223"></canvas>
 
               <div class="radar-legend">
                 <span>
@@ -404,82 +402,8 @@
               </div>
             </div>
             <div class="chart-area-wrapper">
-              <div class="y-axis-labels">
-                <span>4k</span>
-                <span>3k</span>
-                <span>2k</span>
-                <span>1k</span>
-                <span>0</span>
-              </div>
               <div class="chart-content">
-                <svg
-                  class="plot-area"
-                  viewBox="0 0 700 250"
-                  preserveAspectRatio="none"
-                >
-                  <line class="grid-line" x1="0" y1="0" x2="700" y2="0"></line>
-                  <!-- 4k line -->
-                  <line
-                    class="grid-line"
-                    x1="0"
-                    y1="62.5"
-                    x2="700"
-                    y2="62.5"
-                  ></line>
-                  <!-- 3k line -->
-                  <line
-                    class="grid-line"
-                    x1="0"
-                    y1="125"
-                    x2="700"
-                    y2="125"
-                  ></line>
-                  <!-- 2k line -->
-                  <line
-                    class="grid-line"
-                    x1="0"
-                    y1="187.5"
-                    x2="700"
-                    y2="187.5"
-                  ></line>
-                  <!-- 1k line -->
-
-                  <line
-                    class="grid-line"
-                    x1="0"
-                    y1="249"
-                    x2="700"
-                    y2="249"
-                  ></line>
-
-                  <path
-                    class="data-line line-non-ai"
-                    d="M 20 215 Q 350 190, 680 115"
-                  ></path>
-
-                  <path
-                    class="data-line line-ai-enhanced"
-                    d="M 20 210 Q 350 150, 680 35"
-                  ></path>
-                </svg>
-
-                <div class="x-axis-labels">
-                  <span>2025</span>
-                  <span>2026</span>
-                  <span>2027</span>
-                  <span>2028</span>
-                  <span>2029</span>
-                  <span>2030</span>
-                  <span>2031</span>
-                </div>
-
-                <!-- Callouts -->
-                <div class="callout callout-start">
-                  <span class="callout-subtitle">You're here</span>
-                  $80k - $100k
-                </div>
-                <div class="callout callout-non-ai-end">$200k - $300k</div>
-                <div class="callout callout-ai-end">$400k - $450k</div>
+                <canvas id="growthChart" width="900" height="304"></canvas>
               </div>
             </div>
           </div>
@@ -492,66 +416,9 @@
             </div>
             <div class="market-content-wrapper">
               <div class="donut-chart-area">
-                <svg
-                  viewBox="0 0 120 120"
-                  class="donut-svg"
-                  xmlns="http://www.w3.org/2000/svg"
-                  xmlns:xlink="http://www.w3.org/1999/xlink"
-                >
-                  <defs>
-                    <!-- Define the linear gradient for the AI segment -->
-                    <linearGradient
-                      id="aiGradient"
-                      x1="0%"
-                      y1="0%"
-                      x2="100%"
-                      y2="0%"
-                    >
-                      <stop
-                        offset="0%"
-                        style="stop-color: #0134da; stop-opacity: 1"
-                      />
-                      <stop
-                        offset="100%"
-                        style="stop-color: #61b0f7; stop-opacity: 1"
-                      />
-                    </linearGradient>
-                  </defs>
-
-                  <!-- Non-AI Segment (background or first segment) -->
-                  <circle
-                    cx="60"
-                    cy="60"
-                    r="50"
-                    class="donut-segment non-ai-segment"
-                  />
-
-                  <!-- AI Segment (foreground or second segment) -->
-                  <circle
-                    cx="60"
-                    cy="60"
-                    r="50"
-                    class="donut-segment ai-segment"
-                  />
-                  <!-- Image in the Center -->
-                  <image
-                    xlink:href="images/agentup.svg"
-                    href="images/agentup.svg"
-                    x="45"
-                    y="45"
-                    width="30"
-                    height="30"
-                    transform="rotate(90 60 60)"
-                  >
-                    <title>Agent Up Icon</title>
-                    <!-- Accessibility -->
-                  </image>
-                  <!-- Labels -->
-                  <text x="15" y="65" class="donut-label non-ai-label">
-                    45%
-                  </text>
-                  <text x="110" y="65" class="donut-label ai-label">55%</text>
-                </svg>
+                <div class="ratio-chart-wrapper">
+                  <canvas id="ratioChart" width="300" height="200"></canvas>
+                </div>
                 <div class="donut-legend">
                   <span><i class="dot ai-enhanced"></i> AI-Enabled Jobs</span>
                   <span><i class="dot non-ai-jobs"></i> Non-AI Jobs</span>
@@ -638,5 +505,8 @@
     <footer class="footer">
       <img src="images/logo.svg" alt="Company Logo" />
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@1.4.0"></script>
+    <script src="script.js"></script>
   </body>
 </html>
