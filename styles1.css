@@ -765,7 +765,7 @@ body {
 .market-share-section {
   flex: 1 1 clamp(18rem, 35%, 33.25rem);
   min-width: 0;
-  max-width: 33.25rem;
+
   padding: clamp(1.5rem, 3vw, 2rem);
   background-color: #f7fdff;
 }

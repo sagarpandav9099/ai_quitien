@@ -1,7 +1,8 @@
 // Score Chart
 const ctx = document.getElementById("scoreChart").getContext("2d");
-const score = 64;
-const values = [47, 3, 14, 3, 10, 3, 20];
+const score = 69;
+const angle = (score / 100) * Math.PI;
+const values = [47, 3, 14, 3, 20, 3, 20];
 const colors = [
   "#FFA800",
   "transparent",
@@ -44,18 +45,29 @@ new Chart(ctx, {
         const cx = chart.width / 2;
         const cy = chartArea.bottom;
 
+        const scoreAngle = (score / 100) * Math.PI; // 0 to π
+        const radius = chart._metasets[0].data[0].outerRadius - 2;
+
+        const angle = Math.PI + scoreAngle;
+        const x = cx + radius * Math.cos(angle);
+        const y = cy + radius * Math.sin(angle);
+
+        ctx.beginPath();
+        ctx.arc(x, y, 11, 0, 2 * Math.PI);
+        ctx.fillStyle = "#ffffff";
+        ctx.shadowColor = "rgba(10, 10, 10, 0.15)";
+        ctx.shadowBlur = 8;
+        ctx.fill();
+
         ctx.save();
         ctx.textAlign = "center";
         ctx.textBaseline = "middle";
-
-        // "64"
         ctx.font = "bold 60px Inter";
         ctx.fillStyle = "#1A1A2E";
         ctx.fillText(`${score}`, cx - 20, cy - 20);
-
-        // "/100"
         ctx.font = "bold 16px Inter";
         ctx.fillText(`/100`, cx + 35, cy - 10);
+        ctx.restore();
 
         ctx.restore();
       },
@@ -81,7 +93,7 @@ new Chart(radarctx, {
       {
         label: "Gray Base",
         data: [87, 85, 80, 100, 90],
-        backgroundColor: "rgba(185, 185, 185, 0.5)", // Add transparency to gray
+        backgroundColor: "rgba(185, 185, 185, 0.5)",
         borderColor: "#B9B9B9",
         pointRadius: 0,
         pointHoverRadius: 0,
@@ -91,7 +103,7 @@ new Chart(radarctx, {
       {
         label: "Blue Layer",
         data: [65, 65, 55, 67, 56],
-        backgroundColor: "rgba(0, 130, 248, 0.8)", // Slight transparency
+        backgroundColor: "rgba(0, 130, 248, 0.8)",
         borderColor: "#0082F8",
         pointRadius: 0,
         pointHoverRadius: 0,
@@ -101,7 +113,8 @@ new Chart(radarctx, {
     ],
   },
   options: {
-    responsive: false,
+    responsive: true,
+    maintainAspectRatio: false,
     plugins: {
       legend: { display: false },
       tooltip: { enabled: false },
@@ -109,10 +122,10 @@ new Chart(radarctx, {
     scales: {
       r: {
         angleLines: {
-          color: "#aaa", // Border of the polygon lines
+          color: "#aaa",
         },
         grid: {
-          color: "#ddd", // Inner circle lines
+          color: "#ddd",
         },
         pointLabels: {
           font: {
@@ -259,7 +272,7 @@ const centerImagePlugin = {
     const centerX = width / 2;
     const centerY = height / 2;
 
-    const imageSize = 50; // Adjust size as needed
+    const imageSize = Math.min(width, height) * 0.3;
     if (centerImage.complete) {
       ctx.drawImage(
         centerImage,
@@ -269,7 +282,7 @@ const centerImagePlugin = {
         imageSize
       );
     } else {
-      centerImage.onload = () => chart.draw(); // Redraw chart once image is loaded
+      centerImage.onload = () => chart.draw();
     }
   },
 };
@@ -301,23 +314,36 @@ new Chart(ratioCtx, {
     {
       id: "center-icon",
       afterDraw(chart) {
-        const { ctx, chartArea } = chart;
-        const centerX = chart.width / 2;
-        const centerY = chartArea.bottom;
+        const { ctx, chartArea, width } = chart;
+        const centerX = width / 2;
+        const centerY = chartArea.top + (chartArea.bottom - chartArea.top) / 2;
 
+        const baseFontSize = Math.min(width * 0.05, 13);
+        ctx.font = `bold ${baseFontSize}px Inter`;
+
+        const radius = chart.getDatasetMeta(0).data[0].outerRadius * 0.85;
+
+        // 55%
         ctx.save();
         ctx.textAlign = "center";
         ctx.textBaseline = "middle";
-
-        // 55%
-        ctx.font = "bold 13px Inter";
         ctx.fillStyle = "#ffffff";
-        ctx.fillText("55%", centerX + 77, centerY - 90);
 
-        // 45%
+        let angle55 = -Math.PI / 2 + Math.PI * 2 * (55 / 2 / 100);
+        ctx.fillText(
+          "55%",
+          centerX + radius * Math.cos(angle55),
+          centerY + radius * Math.sin(angle55)
+        );
+
         ctx.fillStyle = "#3576EA";
-        ctx.fillText("45%", centerX - 77, centerY - 90);
 
+        let angle45 = -Math.PI / 2 + Math.PI * 2 * ((55 + 2 + 45 / 2) / 100);
+        ctx.fillText(
+          "45%",
+          centerX + radius * Math.cos(angle45),
+          centerY + radius * Math.sin(angle45)
+        );
         ctx.restore();
       },
     },

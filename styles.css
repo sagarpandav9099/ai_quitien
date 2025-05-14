@@ -54,7 +54,6 @@ body {
 }
 
 .primary-button {
-  /* Your existing styles - these look fine */
   background: linear-gradient(to right, #0082f8, #61b0f7);
   color: white;
   padding: 0.875rem 1.75rem;
@@ -141,28 +140,22 @@ body {
 }
 
 .score-card {
-  flex-grow: 0;
-  flex-shrink: 1;
-  flex-basis: 26.5rem;
+  flex: 1 1 clamp(21.4375rem, 20%, 26.5rem);
+
   padding: 2rem;
   border: none;
   outline: 1px solid #e3e3e3;
   display: flex;
   gap: 1rem;
   flex-direction: column;
-  min-width: 21.4375rem;
-  max-width: 26.5rem;
 }
 
 .skill-gap-card {
-  flex-grow: 0;
-  flex-shrink: 1;
-  flex-basis: 68.8125rem;
+  flex: 2 1 clamp(30rem, 60%, 68.8125rem);
+
   border: none;
   outline: 1px solid #e3e3e3;
   padding: 2rem;
-  min-width: 30rem;
-  max-width: 68.8125rem;
 }
 .skill-gap-card h2,
 .score-card h2 {
@@ -174,6 +167,9 @@ body {
 .chart-wrapper {
   margin-top: 16px;
   margin-bottom: 16px;
+  position: relative;
+  height: 100px;
+  width: 100%;
 }
 
 .description {
@@ -196,6 +192,11 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
+  width: 100%;
+  max-width: 311px;
+  height: 223px;
+  margin: 0 auto;
 }
 .radar-chart-container img {
   max-width: 100%;
@@ -296,7 +297,7 @@ body {
   position: relative;
 }
 .timeline-card {
-  flex: 0 0 clamp(10rem, 15vw, 14.3125rem);
+  flex: 0 0 clamp(10rem, 15%, 14.3125rem);
   display: flex;
   padding: 0.75rem 1rem;
   line-height: 148%;
@@ -322,7 +323,7 @@ body {
 }
 
 .role-label {
-  font-size: clamp(0.875rem, 1.2vw, 1rem);
+  font-size: clamp(0.875rem, 3%, 1rem);
   font-weight: bold;
   font-family: "Lato";
   color: #546279;
@@ -339,7 +340,7 @@ body {
   color: #027a48;
 }
 .timeline-connector {
-  flex: 0 0 2.5rem;
+  flex: 0 1 clamp(1rem, 3%, 2.5rem);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -386,7 +387,7 @@ body {
   flex-wrap: wrap;
 }
 .role-transition {
-  flex: 1 1 clamp(17.5rem, 36vw, 42.5rem);
+  flex: 1 1 clamp(17.5rem, 36%, 42.5rem);
   min-width: 280px;
   padding: 1.25rem;
   max-width: 42.5rem;
@@ -395,11 +396,11 @@ body {
   display: flex;
   flex-direction: column;
   gap: 0.9375rem;
-  flex: 1 1 clamp(12rem, 15vw, 16.5rem);
+  flex: 1 1 clamp(12rem, 15%, 16.5rem);
   max-width: 16.5rem;
 }
 .salary-card {
-  flex: 1 1 clamp(14rem, 15vw, 15.625rem);
+  flex: 1 1 clamp(14rem, 15%, 15.625rem);
   max-width: 16.5rem;
   padding-top: 2rem;
   display: flex;
@@ -423,8 +424,8 @@ body {
   font-family: "open sans";
 }
 .skills-label {
-  font-weight: 500;
-  font-size: 0.875rem;
+  font-weight: 700;
+  font-size: clamp(0.575rem, 3vw, 0.875rem);
   font-family: "Open Sans";
   margin-top: 0.75rem;
   margin-bottom: 0.75rem;
@@ -575,7 +576,7 @@ body {
   flex-wrap: wrap;
 }
 .course-card {
-  flex: 1 1 clamp(16rem, 25vw, 19.25rem);
+  flex: 1 1 clamp(16rem, 25%, 19.25rem);
   min-width: 280px;
   max-width: 19.25rem;
   padding: 1rem 1rem 1.5rem 1rem;
@@ -615,7 +616,7 @@ body {
   gap: 0.9375rem;
 }
 .row-grid.role-transition {
-  flex: 2 1 clamp(14rem, 80vw, 60.0625rem);
+  flex: 2 1 clamp(14rem, 60%, 60.0625rem);
   min-width: 14rem;
   max-width: 60.0625rem;
   padding-top: 1.9375rem;
@@ -648,7 +649,7 @@ body {
 }
 
 .more-courses-card {
-  flex: 1 1 clamp(12.5rem, 20vw, 15rem);
+  flex: 1 1 clamp(12.5rem, 20%, 15rem);
   min-width: 200px;
   background: linear-gradient(to right, #0082f8, #61b0f7);
   color: #fff;
@@ -818,6 +819,12 @@ body {
   width: 100%;
 }
 
+.chart-area-wrapper .chart-content {
+  position: relative;
+  width: 100%;
+  height: 300px;
+}
+
 .market-content-wrapper {
   display: flex;
   flex-wrap: wrap;
@@ -833,9 +840,14 @@ body {
   align-items: center;
   position: relative;
 }
-#ratioChart {
-  max-width: 300px;
 
+.ratio-chart-wrapper {
+  position: relative;
+  width: 100%;
+  height: 212px;
+}
+
+#ratioChart {
   display: block;
 }
 
@@ -1053,4 +1065,143 @@ body {
   margin-top: -6.5625rem;
   position: relative;
   z-index: 1;
+}
+
+/* Adjustments for 1440px screens */
+@media (max-width: 1440px) {
+  .container {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+
+  .section-divider {
+    margin-bottom: 3.5rem;
+  }
+  .role-transition h2 {
+    font-size: 16px;
+  }
+  .description {
+    font-size: 14px;
+  }
+  .skills-label {
+    font-size: 0.7rem;
+    margin-top: 0.4rem;
+    margin-bottom: 0.4rem;
+  }
+  .skills-pills-container {
+    padding-top: 0.1rem;
+  }
+  .row-grid .role-transition .skills-label {
+    margin-top: 0.6rem;
+    margin-bottom: 0.6rem;
+  }
+  .row-grid .role-transition .skills-pills-container {
+    padding-top: 0.57rem;
+  }
+  .roadmap-top.last .skills-pills-container .skill-pill.green {
+    padding: 0.33rem;
+    font-size: 0.65rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .container,
+  .cta-banner-wrapper {
+    padding: 0 2rem;
+  }
+
+  .cta-banner {
+    padding: 3rem;
+  }
+
+  .analisys-result {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .score-wrapper {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .roadmap-item {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .timeline-card {
+    flex-basis: auto;
+    text-align: center;
+  }
+  .timeline-connector {
+    display: none;
+  }
+  .role-transition.last {
+    padding: 1.14rem;
+  }
+  .row-grid .role-transition .skills-pills-container {
+    padding-top: 0.9rem;
+  }
+  .role-transition.last .skills-pills-container {
+    padding-top: 0.5rem;
+  }
+  .courses-section {
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  .course-card,
+  .more-courses-card {
+    flex-basis: calc(50% - 0.5rem);
+    max-width: calc(50% - 0.5rem);
+  }
+
+  .cta-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .cta-text {
+    margin-bottom: 25px;
+    flex-basis: auto;
+  }
+
+  .metrics-column,
+  .salary-card {
+    flex-basis: calc(50% - 0.5rem);
+    min-width: 200px;
+  }
+}
+/* Small Tablets & Large Phones */
+@media (max-width: 768px) {
+  .container,
+  .cta-banner-wrapper {
+    padding: 0 1.5rem;
+  }
+
+  .role-transition {
+    flex-basis: 100%;
+    max-width: 45.5rem;
+  }
+  .metrics-column,
+  .salary-card {
+    flex-basis: calc(50% - 0.5rem);
+    max-width: calc(50% - 0.5rem);
+  }
+  .row-grid .role-transition {
+    flex-basis: calc(60% - 0.5rem);
+  }
+  .row-grid.roadmap-top .card.salary-card {
+    flex-basis: calc(40% - 0.5rem);
+  }
+  .row-grid .role-transition .skills-pills-container {
+    padding-top: 0.1rem;
+  }
+  .role-transition.last {
+    flex-basis: 100%;
+    max-width: 45.5rem;
+  }
+  .graph-section,
+  .market-share-section {
+    flex-basis: 100%;
+    max-width: 45.25rem;
+  }
 }
