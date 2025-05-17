@@ -3,6 +3,7 @@ const ctx = document.getElementById("scoreChart").getContext("2d");
 const score = 69;
 const angle = (score / 100) * Math.PI;
 const values = [47, 3, 14, 3, 20, 3, 20];
+
 const colors = [
   "#FFA800",
   "transparent",
@@ -23,7 +24,7 @@ new Chart(ctx, {
 
         borderRadius: 8,
         borderWidth: 0,
-        cutout: "92%",
+        cutout: "90%",
         circumference: 180,
         rotation: 270,
       },
@@ -44,7 +45,7 @@ new Chart(ctx, {
         const { ctx, chartArea } = chart;
         const cx = chart.width / 2;
         const cy = chartArea.bottom;
-
+        const fontSize = chart.width / 7;
         const scoreAngle = (score / 100) * Math.PI; // 0 to π
         const radius = chart._metasets[0].data[0].outerRadius - 2;
 
@@ -62,7 +63,7 @@ new Chart(ctx, {
         ctx.save();
         ctx.textAlign = "center";
         ctx.textBaseline = "middle";
-        ctx.font = "bold 60px Inter";
+        ctx.font = `bold 55px Inter`;
         ctx.fillStyle = "#1A1A2E";
         ctx.fillText(`${score}`, cx - 20, cy - 20);
         ctx.font = "bold 16px Inter";
