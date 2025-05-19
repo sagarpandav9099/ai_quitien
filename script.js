@@ -80,12 +80,16 @@ new Chart(ctx, {
 
 const radarctx = document.getElementById("radarChart").getContext("2d");
 
+const blueGradient = radarctx.createLinearGradient(0, 0, 200, 0);
+blueGradient.addColorStop(0, "rgba(0, 130, 248, 1)");
+blueGradient.addColorStop(1, "rgba(97, 176, 247, 1)");
+
 new Chart(radarctx, {
   type: "radar",
   data: {
     labels: [
       "AI Skill #1",
-      "BAI Skill #2",
+      "AI Skill #2",
       "AI Skill #3",
       "AI Skill #4",
       "AI Skill #5",
@@ -104,7 +108,7 @@ new Chart(radarctx, {
       {
         label: "Blue Layer",
         data: [65, 65, 55, 67, 56],
-        backgroundColor: "rgba(0, 130, 248, 0.8)",
+        backgroundColor: blueGradient,
         borderColor: "#0082F8",
         pointRadius: 0,
         pointHoverRadius: 0,
@@ -146,6 +150,9 @@ new Chart(radarctx, {
 });
 // Line Chart
 const linectx = document.getElementById("growthChart").getContext("2d");
+const gradient1 = ctx.createLinearGradient(0, 0, 0, 400);
+gradient1.addColorStop(0, "#0134DA");
+gradient1.addColorStop(1, "#61B0F7");
 
 new Chart(linectx, {
   type: "line",
@@ -166,9 +173,9 @@ new Chart(linectx, {
         data: [1000, 1050, 1200, 1500, 1800, 2100, 2500],
         borderColor: "#4E4E4E",
 
-        tension: 0.4,
+        tension: 0.1,
         pointRadius: 0,
-        borderWidth: 2,
+        borderWidth: 3,
       },
     ],
   },
@@ -200,7 +207,7 @@ new Chart(linectx, {
             type: "label",
             xValue: "2031",
             yValue: 3900,
-            backgroundColor: "#61B0F7",
+            backgroundColor: gradient1,
             borderRadius: 4,
             content: ["$400k - $450k"],
             color: "#FFFFFF",
@@ -226,7 +233,6 @@ new Chart(linectx, {
             },
             padding: 8,
             yAdjust: 15,
-            xAdjust: 90,
           },
         },
       },
@@ -330,7 +336,7 @@ new Chart(ratioCtx, {
         ctx.textBaseline = "middle";
         ctx.fillStyle = "#ffffff";
 
-        let angle55 = -Math.PI / 2 + Math.PI * 2 * (55 / 2 / 100);
+        let angle55 = -Math.PI / 2 + Math.PI * 2 * (51 / 2 / 100);
         ctx.fillText(
           "55%",
           centerX + radius * Math.cos(angle55),
@@ -339,7 +345,7 @@ new Chart(ratioCtx, {
 
         ctx.fillStyle = "#3576EA";
 
-        let angle45 = -Math.PI / 2 + Math.PI * 2 * ((55 + 2 + 45 / 2) / 100);
+        let angle45 = -Math.PI / 2 + Math.PI * 2 * ((51 + 45 / 2) / 100);
         ctx.fillText(
           "45%",
           centerX + radius * Math.cos(angle45),
